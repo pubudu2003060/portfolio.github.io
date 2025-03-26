@@ -70,7 +70,7 @@ Develop a **personal portfolio web page** using **HTML, CSS, and JavaScript**. T
 ---
 
 ### **Submission Deadline:**  
-📅 **[Specify Date]**  
+📅 ** 8th of May **  
 
 ### **Helpful Resources:**  
 - [GitHub Docs](https://docs.github.com/en/get-started)  
