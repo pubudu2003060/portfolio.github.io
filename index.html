@@ -19,20 +19,25 @@
       <div class="text-2xl font-bold text-blue-600 dark:text-blue-400 tracking-tight">
         Pubudu Madushan
       </div>
-  
+
       <!-- Center: Nav Links -->
       <nav class="hidden md:flex space-x-14 items-center absolute left-1/2 transform -translate-x-1/2">
-        <a href="#hero" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">Home</a>
-        <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">About</a>
-        <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">Projects</a>
-        <a href="#blog" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">Blog</a>
+        <a href="#hero"
+          class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">Home</a>
+        <a href="#about"
+          class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">About</a>
+        <a href="#projects"
+          class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">Projects</a>
+        <a href="#blog"
+          class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">Blog</a>
       </nav>
-  
+
       <!-- Right: Contact Button -->
       <div class="hidden md:block">
-        <a href="#contact" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors font-semibold">Contact</a>
+        <a href="#contact"
+          class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors font-semibold">Contact</a>
       </div>
-  
+
       <!-- Mobile Menu Button -->
       <button id="menu-btn" class="block md:hidden text-gray-600 dark:text-gray-300 focus:outline-none">
         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,42 +45,72 @@
         </svg>
       </button>
     </div>
-  
+
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 shadow-md transition-transform duration-300">
+    <div id="mobile-menu"
+      class="md:hidden hidden bg-white dark:bg-gray-800 shadow-md transition-transform duration-300">
       <ul class="px-4 pt-2 pb-4 space-y-2">
-        <li><a href="#hero" class="block px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md text-gray-700 dark:text-gray-300">Home</a></li>
-        <li><a href="#about" class="block px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md text-gray-700 dark:text-gray-300">About</a></li>
-        <li><a href="#projects" class="block px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md text-gray-700 dark:text-gray-300">Projects</a></li>
-        <li><a href="#blog" class="block px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md text-gray-700 dark:text-gray-300">Blog</a></li>
+        <li><a href="#hero"
+            class="block px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md text-gray-700 dark:text-gray-300">Home</a>
+        </li>
+        <li><a href="#about"
+            class="block px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md text-gray-700 dark:text-gray-300">About</a>
+        </li>
+        <li><a href="#projects"
+            class="block px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md text-gray-700 dark:text-gray-300">Projects</a>
+        </li>
+        <li><a href="#blog"
+            class="block px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md text-gray-700 dark:text-gray-300">Blog</a>
+        </li>
         <li><a href="#contact" class="block px-3 py-2 bg-blue-500 text-white rounded-md">Contact</a></li>
       </ul>
     </div>
   </header>
-  
+
 
   <!-- Hero Section -->
   <section id="hero"
     class="bg-gradient-to-br from-blue-500 to-blue-900 text-white pt-32 pb-20 relative overflow-hidden">
-    <div class="container mx-auto px-4 text-center relative z-10 animate-fade-in">
-      <div class="max-w-3xl mx-auto">
-        <h1 class="text-5xl font-bold mb-4 tracking-tight">Innovative Software Engineering Student & Aspiring DevOps
-          Engineer</h1>
-        <p class="text-xl mb-8 text-blue-100 leading-relaxed">
-          I’m passionate about crafting elegant web solutions and exploring the frontiers of cloud computing.
-        </p>
-        <div class="flex justify-center space-x-4">
-          <a href="#contact"
-            class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover-lift shadow-md transition-colors">
-            Get In Touch
-          </a>
-          <a href="#projects"
-            class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover-lift transition-colors">
-            View Projects
-          </a>
+    <div class="container mx-auto px-4 relative z-10 animate-fade-in">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+
+        <!-- Text Content -->
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0 md:pl-10">
+          <h1 class="text-5xl font-bold mb-6 tracking-tight leading-tight">
+            Hi, I'm Pubudu Madushan
+          </h1>
+          <p class="text-xl mb-8 text-blue-100 leading-relaxed">
+            I'm a passionate and creative software engineering student who loves learning about DevOps and cloud technologies. 
+            I enjoy building smart and scalable solutions, and I like to automate boring tasks to save time and improve productivity. 
+            My goal is to create smooth digital experiences using modern tools and continuous improvement.
+          </p>
+          <div class="flex justify-center md:justify-start space-x-4">
+            <a href="#contact"
+              class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover-lift shadow-md transition-colors">
+              Get In Touch
+            </a>
+            <a href="#projects"
+              class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover-lift transition-colors">
+              View Projects
+            </a>
+          </div>
+        </div>
+
+        <!-- Image with visual effects -->
+        <div class="md:w-1/2 flex justify-center">
+          <div class="relative group">
+            <div class="w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:scale-105 transform transition-transform duration-500">
+
+              <img src="assets/WhatsApp Image 2025-04-02 at 18.57.22_f2dd64ce.jpg" alt="Pubudu Madushan" class="w-full h-full object-cover" />
+            </div>
+            <!-- Glowing circle -->
+            <div class="absolute inset-0 rounded-full bg-blue-400 opacity-30 blur-2xl animate-ping z-[-1]"></div>
+
+          </div>
         </div>
       </div>
     </div>
+
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-20">
       <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -88,6 +123,7 @@
       </svg>
     </div>
   </section>
+
 
   <!-- Intro Section -->
   <section class="container mx-auto px-4 py-20">
