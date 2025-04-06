@@ -8,6 +8,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("d8eG9GfvXDYoTRI_p"); // Replace with your actual EmailJS user ID (public key)
+    })();
+  </script>
+
 </head>
 
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 selection:bg-blue-200 font-inter">
@@ -591,7 +599,7 @@
         <!-- Contact Form -->
         <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
           <h3 class="text-2xl font-semibold text-blue-600 mb-6">Send Me a Message</h3>
-          <form id="contact-form" class="space-y-4">
+          <form id="contact-form" class="space-y-4 text-black">
             <div class="grid md:grid-cols-2 gap-4">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
@@ -723,14 +731,14 @@
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
                 </path>
               </svg>
-              <span class="text-gray-400">Colombo, Sri Lanka</span>
+              <span class="text-gray-400">No 11/13 Hunupitiya,Kelaniya,Sri Lanka</span>
             </li>
           </ul>
         </div>
       </div>
       <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
         <p class="text-gray-400">© 2025 Pubudu Madushan. All rights reserved.</p>
-        <p class="text-gray-500 text-sm mt-2 md:mt-0">Designed with ❤️ by Pubudu Madushan</p>
+        <p class="text-gray-500 text-sm mt-2 md:mt-0">Designed by Pubudu Madushan</p>
       </div>
     </div>
   </footer>
