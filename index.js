@@ -1,3 +1,4 @@
+//togle bar funstion
 const menuBtn = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -5,15 +6,12 @@ menuBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
 });
 
-
+//about section function
 function showTab(tabName) {
-  // Hide all tab contents
   let contents = document.querySelectorAll('.tab-content');
   contents.forEach(content => {
     content.style.display = 'none';
   });
-
-  // Show the clicked tab's content
   document.getElementById(tabName).style.display = 'block';
 }
 
@@ -21,8 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   showTab('languages');
 });
 
-
-
+//email function
 document.getElementById("contact-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -34,4 +31,8 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
       alert("Failed to send message. Error: " + JSON.stringify(error));
     });
 });
+
+(function () {
+  emailjs.init("d8eG9GfvXDYoTRI_p"); 
+})();
 
