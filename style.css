@@ -1,43 +1,14 @@
-body {
-    font-family: 'Inter', sans-serif;
-  }
-  .hero-gradient {
-    background: linear-gradient(135deg, #3b82f6, #1e40af);
-  }
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out;
-  }
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+html {
+    scroll-behavior: smooth;
   }
   .hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  }
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    transition: transform 0.2s ease-in-out;
   }
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out;
-  }
-  .hover-project {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .hover-project:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  }
-  .project-tag {
-    transition: background-color 0.3s ease;
-  }
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out;
+    animation: fadeIn 1s ease-in-out;
   }
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }  
