@@ -1,0 +1,186 @@
+/* Base Styles */
+.projects-section {
+    padding: 8rem 1rem 4rem; /* pt: 32 (8rem), px: 4 (1rem), pb: 16 (4rem) */
+    margin: 0 auto;
+  }
+  
+  .projects-inner {
+    max-width: 72rem; /* equivalent to max-w-6xl */
+    margin: 0 auto;
+    animation: fade-in 1s ease-in-out;
+  }
+  
+  /* Section Title */
+  .section-title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: bold;
+    margin-bottom: 3rem; /* mb-12 */
+    text-align: center;
+    color: #1f2937; /* text-gray-800 */
+  }
+  
+  body.dark .section-title {
+    color: #f3f4f6; /* dark:text-gray-100 */
+  }
+  
+  /* Project Grid */
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* grid-cols-1 */
+    gap: 2rem; /* gap-8 */
+  }
+  
+  /* Project Card */
+  .project-card {
+    background-color: white;
+    border-radius: 1rem; /* rounded-xl */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-0.5rem);
+  }
+  
+  body.dark .project-card {
+    background-color: #374151; /* dark:bg-gray-700 */
+  }
+  
+  /* Flex Container for Card Content */
+  .project-flex {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (min-width: 768px) {
+    .project-flex {
+      flex-direction: row;
+    }
+  }
+  
+  /* Video Section */
+  .video-section {
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .video-section {
+      width: 33.33%;
+    }
+  }
+  
+  .project-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Description Section */
+  .project-desc {
+    padding: 1.5rem; /* p-6 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .project-desc {
+      width: 66.66%;
+    }
+  }
+  
+  /* Badge (Category Label) */
+  .badge {
+    position: absolute;
+    top: 1rem;   /* top-4 */
+    right: 1rem; /* right-4 */
+    background-color: #3b82f6; /* bg-blue-500 */
+    color: white;
+    padding: 0.25rem 0.75rem; /* py-1, px-3 */
+    border-radius: 9999px;    /* rounded-full */
+    font-size: 0.875rem;      /* text-sm */
+  }
+  
+  /* Project Title */
+  .project-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 600;  /* font-semibold */
+    margin-bottom: 0.75rem; /* mb-3 */
+    color: #1f2937;
+  }
+  
+  body.dark .project-title {
+    color: #f3f4f6;
+  }
+  
+  /* Project Description */
+  .project-description {
+    margin-bottom: 1rem; /* mb-4 */
+    color: #4b5563; /* text-gray-600 */
+  }
+  
+  body.dark .project-description {
+    color: #d1d5db; /* dark:text-gray-300 */
+  }
+  
+  /* Tech Tags */
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* gap-2 */
+    margin-bottom: 1rem; /* mb-4 */
+  }
+  
+  .tag {
+    background-color: #eff6ff; /* bg-blue-50 */
+    color: #2563eb;           /* text-blue-600 */
+    padding: 0.25rem 0.5rem;    /* py-1, px-2 */
+    border-radius: 9999px;      /* rounded-full */
+    font-size: 0.75rem;         /* text-xs */
+  }
+  
+  /* Project Footer (Link Section) */
+  .project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem; /* mt-4 */
+  }
+  
+  /* GitHub Link */
+  .project-link {
+    display: flex;
+    align-items: center;
+    font-weight: 500;  /* font-medium */
+    text-decoration: none;
+    color: #2563eb;    /* text-blue-600 */
+    transition: color 0.3s ease;
+  }
+  
+  .project-link:hover {
+    color: #1d4ed8;    /* hover:text-blue-800 */
+  }
+  
+  body.dark .project-link {
+    color: #60a5fa;    /* dark:text-blue-400 */
+  }
+  
+  body.dark .project-link:hover {
+    color: #bfdbfe;    /* dark:hover:text-blue-200 */
+  }
+  
+  .link-icon {
+    margin-left: 0.5rem; /* ml-2 */
+    width: 1rem;  /* w-4 */
+    height: 1rem; /* h-4 */
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
