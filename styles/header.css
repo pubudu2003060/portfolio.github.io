@@ -3,20 +3,21 @@ header {
     top: 0;
     width: 100%;
     z-index: 50;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: hsla(220, 100%, 97%, 1); 
     backdrop-filter: blur(8px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
-.dark header {
-    background-color: rgba(31, 41, 55, 0.9);
-}
-
-.container {
-    max-width: 1200px;
+.header-container {
     margin: 0 auto;
     padding: 0 16px;
+}
+
+.headerScroll{
+    background-color: hsl(220, 100%, 97%,0.5); 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
 }
 
 .header-content {
@@ -29,12 +30,8 @@ header {
 .logo {
     font-size: 24px;
     font-weight: 700;
-    color: #2563eb;
+    color: #1e40af;
     letter-spacing: -0.5px;
-}
-
-.dark .logo {
-    color: #60a5fa;
 }
 
 nav {
@@ -53,30 +50,22 @@ nav a {
 }
 
 nav a:hover {
-    color: #2563eb;
-}
-
-.dark nav a {
-    color: #d1d5db;
-}
-
-.dark nav a:hover {
-    color: #2563eb;
+    color: #1e40af; 
 }
 
 .contact-btn {
     display: none;
-    background-color: #3b82f6;
     color: white;
     padding: 8px 16px;
     border-radius: 9999px;
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    background-color: #1e40af;
 }
 
 .contact-btn:hover {
-    background-color: #2563eb;
+    background-color: #1e3a8a;
 }
 
 .menu-btn {
@@ -87,27 +76,21 @@ nav a:hover {
     cursor: pointer;
 }
 
-.dark .menu-btn {
-    color: #d1d5db;
-}
-
 .menu-btn:focus {
     outline: none;
 }
 
 .mobile-menu {
     display: none;
-    background-color: white;
+    background-color: hsl(220, 100%, 87%,0.5);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.dark .mobile-menu {
-    background-color: #1f2937;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
 }
 
 .mobile-menu.active {
     display: block;
+    pointer-events: auto;
 }
 
 .mobile-menu ul {
@@ -127,20 +110,12 @@ nav a:hover {
     border-radius: 6px;
 }
 
-.dark .mobile-menu a {
-    color: #d1d5db;
-}
-
 .mobile-menu a:hover {
-    background-color: #eff6ff;
-}
-
-.dark .mobile-menu a:hover {
-    background-color: #374151;
+    background-color: #dbeafe;
 }
 
 .mobile-menu a.contact-mobile {
-    background-color: #3b82f6;
+    background-color: #1e40af;
     color: white;
 }
 
@@ -149,7 +124,7 @@ nav a:hover {
         display: flex;
         align-items: center;
     }
-
+    
     .contact-btn {
         display: block;
     }
@@ -161,4 +136,5 @@ nav a:hover {
     .mobile-menu {
         display: none !important;
     }
+
 }
