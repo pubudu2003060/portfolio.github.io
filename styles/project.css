@@ -32,6 +32,26 @@
   border-radius: 2px;
 }
 
+.projects-intro {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.project-highlights {
+  list-style-type: disc;
+  margin: 10px 0;
+  padding-left: 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.project-highlights li {
+  margin-bottom: 5px;
+}
+
+
 /* Project Grid */
 .project-grid {
   display: grid;

@@ -6,6 +6,14 @@
   border-radius: 30px;
 }
 
+.about-intro,
+.tab-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+
 .tab-content ul {
   list-style-position: inside;
 }
@@ -21,10 +29,10 @@
   text-decoration: underline;
 }
 
-/* About Section Styles */
+
 #about {
   padding-bottom: 64px;
-  background-color: #f0f5ff; /* from intro.css */
+  background-color: #f0f5ff; 
 }
 
 .about-content {
@@ -50,7 +58,7 @@
   font-weight: 700;
   margin-bottom: 48px;
   text-align: center;
-  color: #1e3a8a; /* dark blue */
+  color: #1e3a8a; 
   position: relative;
 }
 
@@ -59,13 +67,12 @@
   display: block;
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #1e3a8a, #3b82f6); /* new gradient */
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6); 
   margin: 12px auto 0;
   border-radius: 2px;
 }
 
 
-/* Tab Navigation */
 .tab-navigation {
   display: flex;
   justify-content: center;
@@ -99,7 +106,6 @@
   box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15);
 }
 
-/* Tab Content */
 .tab-content {
   display: none;
   animation: fadeIn 0.5s ease-in-out;
@@ -114,7 +120,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Card Container */
 .tab-card {
   background-color: white;
   border-radius: 16px;
@@ -128,7 +133,6 @@
   box-shadow: 0 15px 30px rgba(30, 64, 175, 0.1);
 }
 
-/* Tab Title */
 .tab-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -148,7 +152,6 @@
   border-radius: 2px;
 }
 
-/* Skill List */
 .skill-list {
   display: flex;
   flex-wrap: wrap;
@@ -158,7 +161,6 @@
   justify-content: center;
 }
 
-/* Individual Skill Item */
 .skill-list li {
   display: flex;
   align-items: center;
@@ -175,7 +177,6 @@
   box-shadow: 0 5px 15px rgba(30, 64, 175, 0.15);
 }
 
-/* Skill Icon */
 .skill-icon {
   width: 50px;
   height: 50px;
@@ -183,7 +184,6 @@
   margin-right: 10px;
 }
 
-/* Skill Tag (Language Name) */
 .skill-tag {
   font-size: 1rem;
   font-weight: 600;
@@ -196,7 +196,6 @@
   color: #3b82f6;
 }
 
-/* Education Card Container */
 .education-card {
   background-color: #fff;
   border-radius: 16px;
@@ -205,7 +204,6 @@
   margin: 0 auto;
 }
 
-/* Common Education Item Styles */
 .education-item {
   margin-bottom: 32px;
   padding-bottom: 24px;
@@ -218,7 +216,6 @@
   margin-bottom: 0;
 }
 
-/* School Title */
 .education-school {
   font-weight: 700;
   font-size: 1.4rem;
@@ -226,7 +223,6 @@
   margin-bottom: 8px;
 }
 
-/* Education Degree */
 .education-degree {
   color: #334155;
   font-weight: 500;
@@ -234,14 +230,12 @@
   font-size: 1.1rem;
 }
 
-/* Education Date */
 .education-date {
   font-size: 0.9rem;
   color: #64748b;
   font-weight: 500;
 }
 
-/* Coursework Heading */
 .coursework-heading {
   font-weight: 700;
   color: #1e3a8a;
@@ -249,7 +243,6 @@
   font-size: 1.2rem;
 }
 
-/* Coursework List */
 .coursework-list {
   list-style-type: disc;
   padding-left: 20px;
@@ -260,7 +253,6 @@
   margin-bottom: 12px;
 }
 
-/* Coursework Links */
 .coursework-list a {
   color: #1e3a8a;
   font-weight: 500;
@@ -271,7 +263,6 @@
   color: #3b82f6;
 }
 
-/* Tab Content Animations */
 .tab-content {
   display: none;
   animation: fadeIn 0.5s ease-in-out;
@@ -286,7 +277,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Tab Title (reused for consistency) */
 .tab-title {
   font-size: 1.5rem;
   font-weight: 700;

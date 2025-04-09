@@ -1,7 +1,7 @@
 
 .contact-section {
   margin-top: 100px;
-  padding: 30px 0 50px 0; /* py-20 */
+  padding: 30px 0 50px 0;
   background: linear-gradient(to bottom, #f0f5ff, #dbeafe);
 }
 
@@ -19,7 +19,7 @@
 }
 
 .contact-title {
-  font-size: 2.25rem; /* text-4xl */
+  font-size: 2.25rem; 
   font-weight: bold;
   color: #1e3a8a;
   margin-bottom: 1rem;
@@ -30,7 +30,7 @@ body.dark .contact-title {
 }
 
 .contact-subtitle {
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem; 
   color: #334155;
 }
 
@@ -38,9 +38,7 @@ body.dark .contact-subtitle {
   color: #e2e8f0;
 }
 
-/* -------------------------------------------
-         Contact Content Grid
-------------------------------------------- */
+
 .contact-content {
   display: grid;
   gap: 2rem;
@@ -54,9 +52,6 @@ body.dark .contact-subtitle {
   }
 }
 
-/* -------------------------------------------
-              Contact Card
-------------------------------------------- */
 .contact-card {
   background-color: #fff;
   border-radius: 0.5rem; /* rounded-lg */
@@ -69,24 +64,34 @@ body.dark .contact-card {
   background-color: #1e40af;
 }
 
+.form-note {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+.contact-form .form-input, .contact-form .form-textarea {
+  transition: border-color 0.2s ease;
+}
+.contact-form .form-input:focus, .contact-form .form-textarea:focus {
+  border-color: #1e3a8a; 
+}
+
+
 .contact-card-title {
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.5rem; 
   font-weight: 600;
-  color: #1e3a8a; /* dark blue */
-  margin-bottom: 1.5rem; /* mb-6 */
+  color: #1e3a8a; 
+  margin-bottom: 1.5rem; 
 }
 
 body.dark .contact-card-title {
-  color: #dbeafe; /* light blue */
+  color: #dbeafe; 
 }
 
-/* -------------------------------------------
-           Contact Info Items
-------------------------------------------- */
 .contact-info-items {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* space-y-6 */
+  gap: 1.5rem; 
 }
 
 .contact-info-item {
@@ -95,19 +100,19 @@ body.dark .contact-card-title {
 }
 
 .contact-icon-wrapper {
-  background-color: #dbeafe; /* light blue */
+  background-color: #dbeafe; 
   border-radius: 9999px;
-  padding: 0.75rem; /* p-3 */
+  padding: 0.75rem;
   margin-right: 1rem;
 }
 
 body.dark .contact-icon-wrapper {
-  background-color: #1e3a8a; /* dark blue */
+  background-color: #1e3a8a; 
 }
 
 .contact-icon {
-  width: 1.5rem; /* w-6 */
-  height: 1.5rem; /* h-6 */
+  width: 1.5rem; 
+  height: 1.5rem;
   color: #1e3a8a;
 }
 
@@ -116,31 +121,28 @@ body.dark .contact-icon {
 }
 
 .contact-info-text .contact-label {
-  font-size: 0.875rem; /* text-sm */
-  color: #64748b; /* light slate */
+  font-size: 0.875rem; 
+  color: #64748b; 
 }
 
 .contact-info-text .contact-value {
   font-size: 1rem;
-  color: #334155; /* dark slate */
+  color: #334155; 
   font-weight: 500;
 }
 
 body.dark .contact-info-text .contact-value {
-  color: #f0f5ff; /* very light blue */
+  color: #f0f5ff; 
 }
 
-/* -------------------------------------------
-              Social Links
-------------------------------------------- */
 .contact-social {
   margin-top: 2rem;
 }
 
 .social-title {
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem; 
   font-weight: 500;
-  color: #334155; /* dark slate */
+  color: #334155;
   margin-bottom: 1rem;
 }
 
@@ -154,8 +156,8 @@ body.dark .social-title {
 }
 
 .social-link {
-  background-color: #f0f5ff; /* light blue bg */
-  color: #1e3a8a; /* dark blue */
+  background-color: #f0f5ff; 
+  color: #1e3a8a;
   padding: 0.75rem;
   border-radius: 9999px;
   transition: background-color 0.3s ease;
@@ -164,26 +166,23 @@ body.dark .social-title {
 }
 
 .social-link:hover {
-  background-color: #dbeafe; /* lighter blue on hover */
+  background-color: #dbeafe; 
 }
 
 body.dark .social-link {
-  background-color: #1e40af; /* dark blue bg */
-  color: #dbeafe; /* light blue text */
+  background-color: #1e40af;
+  color: #dbeafe; 
 }
 
 body.dark .social-link:hover {
-  background-color: #3b82f6; /* medium blue hover */
+  background-color: #3b82f6; 
 }
 
 .social-icon {
-  width: 1.25rem; /* w-5 */
-  height: 1.25rem; /* h-5 */
+  width: 1.25rem; 
+  height: 1.25rem; 
 }
 
-/* -------------------------------------------
-             Contact Form
-------------------------------------------- */
 .contact-form {
   color: #334155; /* dark slate */
 }
@@ -207,7 +206,7 @@ body.dark .social-link:hover {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #475569; /* medium slate */
+  color: #475569; 
   margin-bottom: 0.25rem;
 }
 
@@ -219,7 +218,7 @@ body.dark .form-label {
 .form-textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid #e2e8f0; /* light gray */
+  border: 1px solid #e2e8f0; 
   border-radius: 0.375rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -232,7 +231,7 @@ body.dark .form-textarea {
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #1e3a8a; /* dark blue */
+  border-color: #1e3a8a;
   box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.3);
 }
 
@@ -245,7 +244,7 @@ body.dark .form-textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, #1e3a8a, #3b82f6); /* blue gradient */
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6); 
   color: white;
   font-weight: 500;
   padding: 0.75rem 1.5rem;
@@ -256,11 +255,11 @@ body.dark .form-textarea {
 }
 
 .submit-btn:hover {
-  background: linear-gradient(90deg, #1e40af, #60a5fa); /* slightly lighter gradient on hover */
+  background: linear-gradient(90deg, #1e40af, #60a5fa); 
 }
 
 .submit-icon {
-  width: 1.25rem; /* w-5 */
-  height: 1.25rem; /* h-5 */
-  margin-right: 0.5rem; /* mr-2 */
+  width: 1.25rem; 
+  height: 1.25rem; 
+  margin-right: 0.5rem; 
 }

@@ -34,6 +34,13 @@ header {
     letter-spacing: -0.5px;
 }
 
+.logo .tagline {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+  }
+  
+
 nav {
     display: none;
     position: absolute;

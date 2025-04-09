@@ -28,13 +28,12 @@
     type="image/x-icon">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 
 <body>
 
-  <!--header-->
+  <!--Header-->
   <header>
     <div class="header-container">
       <div class="header-content">
@@ -44,15 +43,16 @@
         </div>
 
         <nav>
-          <a href="#hero">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#blog">Blog</a>
+          <a href="#hero" title="Home">Home</a>
+          <a href="#intro" title="Intro - Welcome to my Digital Space">Intro</a>
+          <a href="#about" title="About - Learn my journey and skills">About</a>
+          <a href="#projects" title="Projects - Check out my work">Projects</a>
+          <a href="#blog" title="Blog - Read my latest tech insights">Blog</a>
         </nav>
 
-        <a href="#contact" class="contact-btn">Contact</a>
+        <a href="#contact" class="contact-btn" title="Contact - Let's connect">Contact</a>
 
-        <button id="menu-btn" class="menu-btn">
+        <button id="menu-btn" class="menu-btn" title="Menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -63,49 +63,51 @@
 
     <div id="mobile-menu" class="mobile-menu">
       <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact" class="contact-mobile">Contact</a></li>
+        <li><a href="#hero" title="Home">Home</a></li>
+        <a href="#intro" title="Intro">Intro</a>
+        <li><a href="#about" title="About">About</a></li>
+        <li><a href="#projects" title="Projects">Projects</a></li>
+        <li><a href="#blog" title="Blog">Blog</a></li>
+        <li><a href="#contact" class="contact-mobile" title="Contact">Contact</a></li>
       </ul>
     </div>
   </header>
 
-  <!--Hero Section-->
+  <!-- Hero Section -->
   <section id="hero">
     <div class="heroContainer">
       <div class="hero-content">
-        <!-- Text Content -->
+
         <div class="hero-text">
           <h1>Hi, I'm Pubudu Madushan</h1>
           <p>
             I'm a passionate and creative software engineering student who loves learning about DevOps and cloud
             technologies.
-            I enjoy building smart and scalable solutions, and I like to automate boring tasks to save time and improve
-            productivity.
-            My goal is to create smooth digital experiences using modern tools and continuous improvement.
+            I enjoy building smart and scalable solutions, automating mundane tasks to boost productivity, and crafting
+            seamless digital experiences.
           </p>
+
+          <p class="hero-subtitle">Coding the future, one innovative idea at a time.</p>
+
+          <p class="hero-cta">Discover how my work transforms challenges into cutting-edge digital solutions.</p>
           <div class="hero-buttons">
-            <a href="#contact" class="btn-primary">Get In Touch</a>
-            <a href="#projects" class="btn-secondary">View Projects</a>
+            <a href="#contact" class="btn-primary" title="Let's get in touch">Get In Touch</a>
+            <a href="#projects" class="btn-secondary" title="See my projects">View Projects</a>
           </div>
         </div>
 
-        <!-- Image with visual effects -->
         <div class="hero-image">
           <div class="image-container">
             <div class="profile-image">
-              <img src="assets/WhatsApp Image 2025-04-02 at 18.57.22_f2dd64ce.jpg" alt="Pubudu Madushan" />
+              <img src="assets/WhatsApp Image 2025-04-02 at 18.57.22_f2dd64ce.jpg" alt="Pubudu Madushan">
             </div>
-            <!-- Glowing circle -->
+
             <div class="glow-effect"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Background Pattern -->
     <div class="background-pattern">
       <svg xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -119,55 +121,63 @@
   </section>
 
   <!-- Intro Section -->
-  <section class="intro-section">
+  <section id="intro" class="intro-section">
     <div class="intro-content">
+
       <h2>Welcome to my Digital Space</h2>
-      <p>
-        I thrive on transforming complex challenges into innovative, user-centric applications. Here you'll find a
-        showcase of my skills, projects, and insights.
+      <p class="mission-statement">
+        My mission is to transform challenges into innovative, user-centric applications. I strive to blend technical
+        expertise with creative solutions that bring ideas to life.
       </p>
+      <p>
+        I thrive on turning complexity into simplicity through cutting-edge technology and relentless curiosity. Here
+        you'll find a showcase of my skills, projects, and insights.
+      </p>
+
       <div class="skills-grid">
-        <!-- Web Development -->
-        <div class="skill-card" >
+
+        <div class="skill-card">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
             </path>
           </svg>
           <h3>Web Development</h3>
-          <p>Building responsive and performant web applications with modern tech.</p>
+          <p>Building responsive and performant web applications with modern tech. I focus on clean code and seamless
+            design integration.</p>
         </div>
 
-        <!-- Cloud Computing -->
-        <div class="skill-card" >
+        <div class="skill-card">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
             </path>
           </svg>
           <h3>Cloud Computing</h3>
-          <p>Using cloud platforms to build scalable and efficient solutions.</p>
+          <p>Using cloud platforms to build scalable and efficient solutions. I leverage virtual infrastructures to
+            enhance agility and performance.</p>
         </div>
 
-        <!-- Project Management -->
-        <div class="skill-card" >
+        <div class="skill-card">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
             </path>
           </svg>
           <h3>Project Management</h3>
-          <p>Collaborating and delivering projects from idea to launch.</p>
+          <p>Collaborating and delivering projects from idea to launch. I ensure effective communication and streamline
+            workflows to achieve success.</p>
         </div>
 
-        <!-- DevOps Engineering -->
         <div class="skill-card">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 10h2l1-2h8l1 2h2M6 14h12M8 18h8M12 6V4m0 0a2 2 0 00-2 2h4a2 2 0 00-2-2z" />
+              d="M3 10h2l1-2h8l1 2h2M6 14h12M8 18h8M12 6V4m0 0a2 2 0 00-2 2h4a2 2 0 00-2-2z">
+            </path>
           </svg>
           <h3>DevOps Engineering</h3>
-          <p>Automating workflows and bridging dev and ops for smoother software delivery.</p>
+          <p>Automating workflows and bridging dev and ops for smoother software delivery. I’m passionate about creating
+            reliable pipelines that reduce manual overhead.</p>
         </div>
       </div>
     </div>
@@ -178,7 +188,12 @@
     <div class="about-content">
       <h2 class="about-heading">About Me</h2>
 
-      <!-- Tab Buttons -->
+      <p class="about-intro">
+        I’m a dedicated software engineering undergraduate fueled by passion for technology and innovation. Through
+        hands-on projects, continued learning, and real-world challenges, I strive to create practical solutions that
+        make a difference in the digital world.
+      </p>
+
       <div class="tab-navigation">
         <button id="languagesBtn" onclick="showTab('languages')" class="tab-button">Languages</button>
         <button id="frameworksBtn" onclick="showTab('frameworks')" class="tab-button">Frameworks</button>
@@ -186,10 +201,13 @@
         <button id="educationBtn" onclick="showTab('education')" class="tab-button">Education</button>
       </div>
 
-      <!-- Tab Content -->
       <div id="languages" class="tab-content active">
         <div class="tab-card">
           <h3 class="tab-title">Programming Languages</h3>
+          <p class="tab-description">
+            These languages form the foundation of my technical expertise, enabling me to solve a variety of complex
+            challenges.
+          </p>
           <ul class="skill-list">
             <li data-aos="zoom-in" data-aos-delay="100">
               <img src="https://1000logos.net/wp-content/uploads/2020/09/Java-Logo.png" alt="Java Logo"
@@ -227,10 +245,13 @@
         </div>
       </div>
 
-
       <div id="frameworks" class="tab-content">
         <div class="tab-card">
           <h3 class="tab-title">Frameworks & Libraries</h3>
+          <p class="tab-description">
+            I utilize robust frameworks and libraries to accelerate development and build responsive, modern
+            applications.
+          </p>
           <ul class="skill-list">
             <li data-aos="zoom-in" data-aos-delay="100">
               <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Spring_Boot.svg" alt="Spring Boot Logo"
@@ -261,10 +282,13 @@
         </div>
       </div>
 
-
       <div id="devops" class="tab-content">
         <div class="tab-card">
           <h3 class="tab-title">Cloud & DevOps</h3>
+          <p class="tab-description">
+            Bridging development and operations, I leverage cloud platforms and automation tools to streamline
+            workflows.
+          </p>
           <ul class="skill-list">
             <li data-aos="zoom-in" data-aos-delay="100">
               <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo"
@@ -290,19 +314,20 @@
         </div>
       </div>
 
-
       <div id="education" class="tab-content">
         <div class="tab-card education-card">
           <h3 class="tab-title">Education</h3>
+          <p class="tab-description">
+            Grounded in both theory and hands-on practice, my education shapes my perspective and fuels my drive for
+            innovation.
+          </p>
 
-          <!-- Education Details -->
           <div class="education-item">
             <h4 class="education-school">University of Kelaniya</h4>
             <p class="education-degree">BSc(Hons) Software Engineering</p>
             <p class="education-date">2022 - Present</p>
           </div>
 
-          <!-- Relevant Coursework -->
           <div class="education-item coursework">
             <h4 class="coursework-heading">Relevant Coursework</h4>
             <ul class="coursework-list">
@@ -338,29 +363,43 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!--Projects Section -->
   <section id="projects" class="projects-section">
     <div class="projects-inner">
       <h2 class="projects-heading">My Projects</h2>
 
-      <!-- Project Grid -->
+      <p class="projects-intro">
+        Explore my portfolio of projects that showcase my ability to solve real-world challenges using creative and
+        innovative technologies. Each project is a testament to my commitment to quality and continuous improvement.
+      </p>
+
+
       <div class="project-grid">
-        <!-- Project Card 1 -->
+
         <div class="project-card" data-category="web" data-aos="flip-left" data-aos-duration="1000">
           <div class="project-flex">
-            <!-- Video Section -->
+
             <div class="video-section">
               <video src="./assets/LUXEAURA COSMETICS - Google Chrome 2025-04-06 12-56-57.mp4" autoplay muted loop
                 class="project-video"></video>
             </div>
-            <!-- Description Section -->
+
             <div class="project-desc">
-              <!-- Category Badge -->
+
               <div class="badge">Web Development</div>
               <h3 class="project-title">Lexaura Website</h3>
               <p class="project-description">
-                A modern, luxury-themed cosmetics website designed to provide an elegant online shopping experience.
+                A modern, luxury-themed cosmetics website designed to deliver an elegant and immersive online shopping
+                experience.
+                This project challenged me to balance aesthetic design with performance, resulting in a solution that is
+                both visually appealing and highly responsive.
               </p>
+
+              <ul class="project-highlights">
+                <li>Responsive design implementation</li>
+                <li>Performance optimization techniques</li>
+                <li>Enhanced user experience through intuitive navigation</li>
+              </ul>
               <div class="tech-tags">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
@@ -369,7 +408,8 @@
                 <span class="tag">MySQL</span>
               </div>
               <div class="project-footer">
-                <a href="https://github.com/Rashmika119/cosmetic-web" target="_blank" class="project-link">
+                <a href="https://github.com/Rashmika119/cosmetic-web" target="_blank" class="project-link"
+                  title="View Lexaura Website on GitHub">
                   View on GitHub
                   <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -381,31 +421,39 @@
           </div>
         </div>
 
-        <!-- Project Card 2 -->
+
         <div class="project-card" data-category="fullstack" data-aos="flip-right" data-aos-duration="1000">
           <div class="project-flex">
-            <!-- Video Section -->
+
             <div class="video-section">
               <video src="./assets/Pass My Fuel Admin - Google Chrome 2025-04-06 13-09-02.mp4" autoplay muted loop
                 class="project-video"></video>
             </div>
-            <!-- Description Section -->
+
             <div class="project-desc">
-              <!-- Category Badge -->
+
               <div class="badge">Full Stack</div>
               <h3 class="project-title">Fuelstation Management System</h3>
               <p class="project-description">
-                A fuel station management system for user, station, and a dashboard to overview. It helps manage the
-                fuel crisis in Sri Lanka.
+                A comprehensive fuel station management system that streamlines user and station operations and provides
+                an intuitive dashboard.
+                This project addresses the fuel distribution challenges by improving efficiency and data insights,
+                ultimately contributing to a sustainable approach in crisis management.
               </p>
+
+              <ul class="project-highlights">
+                <li>End-to-end system integration</li>
+                <li>Real-time data monitoring</li>
+                <li>Robust full-stack architecture</li>
+              </ul>
               <div class="tech-tags">
                 <span class="tag">Spring Boot</span>
                 <span class="tag">React</span>
                 <span class="tag">MySQL</span>
               </div>
               <div class="project-footer">
-                <a href="https://github.com/pubudu2003060/SENG-22212-Group-Project" target="_blank"
-                  class="project-link">
+                <a href="https://github.com/pubudu2003060/SENG-22212-Group-Project" target="_blank" class="project-link"
+                  title="View Fuelstation Management System on GitHub">
                   View on GitHub
                   <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -424,9 +472,15 @@
   <section id="blog" class="blog-section">
     <div class="blog-inner">
       <h2 class="blog-heading">Latest Insights</h2>
+
+      <p class="blog-intro">
+        Welcome to my blog – your go-to spot for in-depth explorations on technology, cloud computing, cybersecurity,
+        and modern digital strategies. Dive in to discover insights, practical tips, and thought-provoking analyses that
+        keep you ahead of the curve.
+      </p>
       <div class="blog-grid">
-        <!-- Blog Post Card 1 -->
-        <div class="blog-card" >
+
+        <div class="blog-card">
           <div class="blog-image-wrapper">
             <img src="./assets/b1.webp" alt="From Virtual Machines to Containers" class="blog-image">
             <div class="blog-badge">Cloud Computing</div>
@@ -434,7 +488,9 @@
           <div class="blog-content">
             <h3 class="blog-title">From Virtual Machines to Containers</h3>
             <p class="blog-description">
-              Exploring the evolution of infrastructure from traditional VMs to modern containerized environments.
+              Exploring the evolution of infrastructure from traditional virtual machines to modern containerized
+              environments. This post details the benefits of containerization and real-world use cases that enhance
+              scalability and performance.
             </p>
             <div class="blog-footer">
               <div class="blog-meta">
@@ -442,7 +498,7 @@
                 <span class="blog-readtime">6 min read</span>
               </div>
               <a href="https://medium.com/@madushanp835/from-virtual-machines-to-containers-6d0bee648b93"
-                target="_blank" class="blog-link">
+                target="_blank" class="blog-link" title="Read the full post">
                 Read More
                 <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -453,8 +509,7 @@
           </div>
         </div>
 
-        <!-- Blog Post Card 2 -->
-        <div class="blog-card" >
+        <div class="blog-card">
           <div class="blog-image-wrapper">
             <img src="./assets/b2.webp" alt="The Rise of Multi-Cloud Strategies" class="blog-image">
             <div class="blog-badge">Cloud Strategy</div>
@@ -462,7 +517,9 @@
           <div class="blog-content">
             <h3 class="blog-title">The Rise of Multi-Cloud Strategies</h3>
             <p class="blog-description">
-              A deep dive into how businesses are leveraging multiple cloud platforms for flexibility and resilience.
+              A deep dive into how businesses are leveraging multiple cloud platforms for flexibility and enhanced
+              resilience. This post breaks down the strategic advantages and challenges of adopting a multi-cloud
+              approach.
             </p>
             <div class="blog-footer">
               <div class="blog-meta">
@@ -470,7 +527,7 @@
                 <span class="blog-readtime">7 min read</span>
               </div>
               <a href="https://medium.com/@madushanp835/the-rise-of-multi-cloud-strategies-a4f815d17e81" target="_blank"
-                class="blog-link">
+                class="blog-link" title="Read the full post">
                 Read More
                 <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -481,8 +538,7 @@
           </div>
         </div>
 
-        <!-- Blog Post Card 3 -->
-        <div class="blog-card" >
+        <div class="blog-card">
           <div class="blog-image-wrapper">
             <img src="./assets/b3.webp" alt="Why Businesses Are Shifting to the Cloud" class="blog-image">
             <div class="blog-badge">Cloud Adoption</div>
@@ -490,8 +546,9 @@
           <div class="blog-content">
             <h3 class="blog-title">Why Businesses Are Shifting to the Cloud</h3>
             <p class="blog-description">
-              Discussing the key benefits of cloud computing and why businesses are increasingly adopting cloud
-              solutions.
+              Discussing the key benefits of cloud computing and why businesses are increasingly moving away from
+              traditional IT infrastructures. Learn about cost efficiency, scalability, and the competitive edge offered
+              by cloud solutions.
             </p>
             <div class="blog-footer">
               <div class="blog-meta">
@@ -499,7 +556,7 @@
                 <span class="blog-readtime">5 min read</span>
               </div>
               <a href="https://medium.com/@madushanp835/why-businesses-are-shifting-to-the-cloud-d09f515ef280"
-                target="_blank" class="blog-link">
+                target="_blank" class="blog-link" title="Read the full post">
                 Read More
                 <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -510,8 +567,7 @@
           </div>
         </div>
 
-        <!-- Blog Post Card 4 -->
-        <div class="blog-card" >
+        <div class="blog-card">
           <div class="blog-image-wrapper">
             <img src="./assets/b4.webp" alt="CIA Triad in Cyber Security" class="blog-image">
             <div class="blog-badge">Cyber Security</div>
@@ -520,6 +576,8 @@
             <h3 class="blog-title">CIA Triad in Cyber Security</h3>
             <p class="blog-description">
               Understanding the fundamental principles of Confidentiality, Integrity, and Availability in cybersecurity.
+              Explore practical applications of the CIA triad and how organizations can safeguard their digital assets
+              effectively.
             </p>
             <div class="blog-footer">
               <div class="blog-meta">
@@ -527,7 +585,7 @@
                 <span class="blog-readtime">2 min read</span>
               </div>
               <a href="https://medium.com/@madushanp835/cia-triad-in-cyber-security-ee606a2eabb" target="_blank"
-                class="blog-link">
+                class="blog-link" title="Read the full post">
                 Read More
                 <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -537,6 +595,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -547,7 +606,8 @@
       <div class="contact-header">
         <h2 class="contact-title">Get In Touch</h2>
         <p class="contact-subtitle">
-          I’m always open to new opportunities and collaborations.
+          I'm always open to new opportunities, collaborations, and engaging tech discussions. Whether you have a
+          question, a project idea, or just want to say hi, I'd love to hear from you.
         </p>
       </div>
       <div class="contact-content">
@@ -588,19 +648,20 @@
           <div class="contact-social">
             <h4 class="social-title">Connect With Me</h4>
             <div class="social-links">
-              <a href="https://www.linkedin.com/in/pubudu-madhushan-0b0621292" target="_blank" class="social-link">
+              <a href="https://www.linkedin.com/in/pubudu-madhushan-0b0621292" target="_blank" class="social-link"
+                title="Visit my LinkedIn">
                 <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
               </a>
-              <a href="https://github.com/pubudu2003060" target="_blank" class="social-link">
+              <a href="https://github.com/pubudu2003060" target="_blank" class="social-link" title="Visit my GitHub">
                 <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
               </a>
-              <a href="https://medium.com/@madushanp835" target="_blank" class="social-link">
+              <a href="https://medium.com/@madushanp835" target="_blank" class="social-link" title="Visit my Medium">
                 <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M7.5 5.25h9v1.5h-9v-1.5zm-1.5 3h12v1.5H6v-1.5zm3 3h6v1.5H9v-1.5zm-3 3h12v1.5H6v-1.5zm3 3h6v1.5H9v-1.5z" />
@@ -612,6 +673,11 @@
         <!-- Contact Form -->
         <div class="contact-card">
           <h3 class="contact-card-title accent-color">Send Me a Message</h3>
+          <!-- New Instructional Note -->
+          <p class="form-note">
+            Feel free to leave your name, email, and a brief message so I can better understand your needs. I look
+            forward to connecting with you!
+          </p>
           <form id="contact-form" class="contact-form">
             <div class="form-grid">
               <div class="form-group">
@@ -632,7 +698,7 @@
               <textarea id="message" name="message" rows="5" required placeholder="Your Message"
                 class="form-textarea"></textarea>
             </div>
-            <button type="submit" class="submit-btn">
+            <button type="submit" class="submit-btn" title="Send your message">
               <svg class="submit-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
@@ -749,8 +815,6 @@
     </div>
   </footer>
 
-
-  <!-- Mobile Menu Toggle & Dark Mode Script -->
   <script src="index.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
