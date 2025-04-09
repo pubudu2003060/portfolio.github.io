@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="./styles/footer.css">
   <link rel="icon" href="./assets/Leonardo_Phoenix_10_A_vibrant_modern_logo_for_a_personal_portf_1.jpg"
     type="image/x-icon">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
@@ -126,7 +128,7 @@
       </p>
       <div class="skills-grid">
         <!-- Web Development -->
-        <div class="skill-card">
+        <div class="skill-card" data-aos="fade-right" data-aos-duration="1000">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
@@ -137,7 +139,7 @@
         </div>
 
         <!-- Cloud Computing -->
-        <div class="skill-card">
+        <div class="skill-card" data-aos="fade-left" data-aos-duration="1000">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
@@ -148,7 +150,7 @@
         </div>
 
         <!-- Project Management -->
-        <div class="skill-card">
+        <div class="skill-card" data-aos="fade-right" data-aos-delay="200">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
@@ -159,7 +161,7 @@
         </div>
 
         <!-- DevOps Engineering -->
-        <div class="skill-card">
+        <div class="skill-card" data-aos="fade-left" data-aos-delay=300">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M3 10h2l1-2h8l1 2h2M6 14h12M8 18h8M12 6V4m0 0a2 2 0 00-2 2h4a2 2 0 00-2-2z" />
@@ -171,112 +173,180 @@
     </div>
   </section>
 
-  <!-- Section Divider -->
-  <div class="mt-16 border-t border-white-300 dark:border-gray-600"></div>
-
   <!-- About Section -->
-  <section id="about" class="container">
+  <section id="about" class="aboutContainer">
     <div class="about-content">
       <h2 class="about-heading">About Me</h2>
 
       <!-- Tab Buttons -->
       <div class="tab-navigation">
-        <button onclick="showTab('languages')" class="tab-button">Languages</button>
-        <button onclick="showTab('frameworks')" class="tab-button">Frameworks</button>
-        <button onclick="showTab('devops')" class="tab-button">DevOps & cloud</button>
-        <button onclick="showTab('education')" class="tab-button">Education</button>
+        <button id="languagesBtn" onclick="showTab('languages')" class="tab-button">Languages</button>
+        <button id="frameworksBtn" onclick="showTab('frameworks')" class="tab-button">Frameworks</button>
+        <button id="devopsBtn" onclick="showTab('devops')" class="tab-button">DevOps & cloud</button>
+        <button id="educationBtn" onclick="showTab('education')" class="tab-button">Education</button>
       </div>
 
       <!-- Tab Content -->
-      <div id="languages" class="tab-content">
+      <div id="languages" class="tab-content active">
         <div class="tab-card">
           <h3 class="tab-title">Programming Languages</h3>
-          <ul class="tab-list">
-            <li>Java</li>
-            <li>JavaScript</li>
-            <li>HTML/CSS</li>
-            <li>Python</li>
-            <li>PHP</li>
-            <li>C</li>
-            <li>SQL</li>
+          <ul class="skill-list">
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://1000logos.net/wp-content/uploads/2020/09/Java-Logo.png" alt="Java Logo"
+                class="skill-icon">
+              <span class="skill-tag">Java</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo"
+                class="skill-icon">
+              <span class="skill-tag">JavaScript</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="HTML5 Logo"
+                class="skill-icon">
+              <span class="skill-tag">HTML/CSS</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python Logo"
+                class="skill-icon">
+              <span class="skill-tag">Python</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://www.php.net/images/logos/php-logo.svg" alt="PHP Logo" class="skill-icon">
+              <span class="skill-tag">PHP</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="C Logo" class="skill-icon">
+              <span class="skill-tag">C</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://cdn-icons-png.flaticon.com/512/5968/5968332.png" alt="SQL Logo" class="skill-icon">
+              <span class="skill-tag">SQL</span>
+            </li>
           </ul>
         </div>
       </div>
+
 
       <div id="frameworks" class="tab-content">
         <div class="tab-card">
           <h3 class="tab-title">Frameworks & Libraries</h3>
-          <ul class="tab-list">
-            <li>Spring Boot</li>
-            <li>React</li>
-            <li>React-native</li>
-            <li>Tailwind CSS</li>
-            <li>Node.js</li>
+          <ul class="skill-list">
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Spring_Boot.svg" alt="Spring Boot Logo"
+                class="skill-icon">
+              <span class="skill-tag">Spring Boot</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo"
+                class="skill-icon">
+              <span class="skill-tag">React</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/React_Native_Logo.png"
+                alt="React Native Logo" class="skill-icon">
+              <span class="skill-tag">React-native</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+                alt="Tailwind CSS Logo" class="skill-icon">
+              <span class="skill-tag">Tailwind CSS</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js Logo"
+                class="skill-icon">
+              <span class="skill-tag">Node.js</span>
+            </li>
           </ul>
         </div>
       </div>
+
 
       <div id="devops" class="tab-content">
         <div class="tab-card">
           <h3 class="tab-title">Cloud & DevOps</h3>
-          <ul class="tab-list">
-            <li>AWS</li>
-            <li>Docker</li>
-            <li>Jenkins</li>
-            <li>GitHub Actions</li>
+          <ul class="skill-list">
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo"
+                class="skill-icon">
+              <span class="skill-tag">AWS</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg"
+                alt="Docker Logo" class="skill-icon">
+              <span class="skill-tag">Docker</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg" alt="Jenkins Logo"
+                class="skill-icon">
+              <span class="skill-tag">Jenkins</span>
+            </li>
+            <li data-aos="zoom-in" data-aos-delay="100">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/GitHub_Actions_logo.svg"
+                alt="GitHub Actions Logo" class="skill-icon">
+              <span class="skill-tag">GitHub Actions</span>
+            </li>
           </ul>
         </div>
       </div>
 
+
       <div id="education" class="tab-content">
-        <div class="tab-card">
+        <div class="tab-card education-card">
           <h3 class="tab-title">Education</h3>
+
+          <!-- Education Details -->
           <div class="education-item">
             <h4 class="education-school">University of Kelaniya</h4>
             <p class="education-degree">BSc(Hons) Software Engineering</p>
             <p class="education-date">2022 - Present</p>
           </div>
-          <div class="education-item">
+
+          <!-- Relevant Coursework -->
+          <div class="education-item coursework">
             <h4 class="coursework-heading">Relevant Coursework</h4>
             <ul class="coursework-list">
-              <li><a
-                  href="https://alison.com/certification/check/2y10GN1yYWW7JgpAuz9AgYv3cebz3p1PtiatYGpz410e0cItXf53YG#google_vignette"
+              <li>
+                <a href="https://alison.com/certification/check/2y10GN1yYWW7JgpAuz9AgYv3cebz3p1PtiatYGpz410e0cItXf53YG#google_vignette"
                   target="_blank">
                   Diploma in Application Development Using PHP and MySQL - Alison
-                </a></li>
-              <li><a
-                  href="https://alison.com/certification/check/2y108zkG7Lq9sYRZWKSdTmAFOOYXdo4l81DlwBxjd2YhcNNCbWkIw9hC"
+                </a>
+              </li>
+              <li>
+                <a href="https://alison.com/certification/check/2y108zkG7Lq9sYRZWKSdTmAFOOYXdo4l81DlwBxjd2YhcNNCbWkIw9hC"
                   target="_blank">
                   Diploma in C Programming - Alison
-                </a></li>
-              <li><a
-                  href="https://www.linkedin.com/learning/certificates/4037274072f5a561ca447a41d22e6e39357990f745266ad4b8850691676590c4"
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/learning/certificates/4037274072f5a561ca447a41d22e6e39357990f745266ad4b8850691676590c4"
                   target="_blank">
                   Learning Git and GitHub - LinkedIn
-                </a></li>
-              <li><a
-                  href="https://www.linkedin.com/learning/certificates/dc15f3687c75d98fd93818c1cb6c16c4312cf7a1b2ddc01a7f315a9aac787a5e"
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/learning/certificates/dc15f3687c75d98fd93818c1cb6c16c4312cf7a1b2ddc01a7f315a9aac787a5e"
                   target="_blank">
-                  Learning Cloud Computing</a></li>
+                  Learning Cloud Computing
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
+
     </div>
   </section>
-
-  <!-- Section Divider -->
-  <div class="mt-16 border-t border-white-300 dark:border-gray-600"></div>
 
   <!-- Projects Section -->
   <section id="projects" class="projects-section">
     <div class="projects-inner">
-      <h2 class="section-title">My Projects</h2>
+      <h2 class="projects-heading">My Projects</h2>
 
       <!-- Project Grid -->
       <div class="project-grid">
         <!-- Project Card 1 -->
-        <div class="project-card" data-category="web">
+        <div class="project-card" data-category="web" data-aos="flip-left" data-aos-duration="1000">
           <div class="project-flex">
             <!-- Video Section -->
             <div class="video-section">
@@ -312,7 +382,7 @@
         </div>
 
         <!-- Project Card 2 -->
-        <div class="project-card" data-category="fullstack">
+        <div class="project-card" data-category="fullstack" data-aos="flip-right" data-aos-duration="1000">
           <div class="project-flex">
             <!-- Video Section -->
             <div class="video-section">
@@ -350,16 +420,13 @@
     </div>
   </section>
 
-  <!-- Section Divider -->
-  <div class="mt-16 border-t border-white-300 dark:border-gray-600"></div>
-
-  <!-- Blog Section -->
+ <!-- Blog Section -->
   <section id="blog" class="blog-section">
     <div class="blog-inner">
       <h2 class="section-title">Latest Insights</h2>
       <div class="blog-grid">
         <!-- Blog Post Card 1 -->
-        <div class="blog-card">
+        <div class="blog-card" data-aos="fade-right" data-aos-duration="1000"  >
           <div class="blog-image-wrapper">
             <img src="./assets/b1.webp" alt="From Virtual Machines to Containers" class="blog-image">
             <div class="blog-badge">Cloud Computing</div>
@@ -388,7 +455,7 @@
 
         <!-- Blog Post Card 2 -->
         <div class="blog-card">
-          <div class="blog-image-wrapper">
+          <div class="blog-image-wrapper" data-aos="fade-left" data-aos-duration="1000">
             <img src="./assets/b2.webp" alt="The Rise of Multi-Cloud Strategies" class="blog-image">
             <div class="blog-badge">Cloud Strategy</div>
           </div>
@@ -415,7 +482,7 @@
         </div>
 
         <!-- Blog Post Card 3 -->
-        <div class="blog-card">
+        <div class="blog-card" data-aos="fade-right" data-aos-duration="1000">
           <div class="blog-image-wrapper">
             <img src="./assets/b3.webp" alt="Why Businesses Are Shifting to the Cloud" class="blog-image">
             <div class="blog-badge">Cloud Adoption</div>
@@ -444,7 +511,7 @@
         </div>
 
         <!-- Blog Post Card 4 -->
-        <div class="blog-card">
+        <div class="blog-card" data-aos="fade-left" data-aos-duration="1000">
           <div class="blog-image-wrapper">
             <img src="./assets/b4.webp" alt="CIA Triad in Cyber Security" class="blog-image">
             <div class="blog-badge">Cyber Security</div>
@@ -693,6 +760,10 @@
 
   <!-- Mobile Menu Toggle & Dark Mode Script -->
   <script src="index.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>

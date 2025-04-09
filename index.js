@@ -19,7 +19,18 @@ function showTab(tabName) {
   contents.forEach(content => {
     content.style.display = 'none';
   });
-  document.getElementById(tabName).style.display = 'block';
+  const tab = document.getElementById(tabName);
+  tab.style.display = 'block';
+
+  let contentsbutton = document.querySelectorAll('.tab-button');
+  contentsbutton.forEach(content => {
+    content.classList.remove('active');
+
+  });
+  const buttonname = tabName + "Btn";
+  const button = document.getElementById(buttonname);
+  button.classList.add('active');
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,15 +51,15 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
 });
 
 (function () {
-  emailjs.init("d8eG9GfvXDYoTRI_p"); 
+  emailjs.init("d8eG9GfvXDYoTRI_p");
 })();
 
 //header scroll function
-window.addEventListener('scroll',() => {
+window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
-  if(window.scrollY>100){
+  if (window.scrollY > 100) {
     header.classList.add('headerScroll')
-  }else{
+  } else {
     header.classList.remove('headerScroll')
   }
 })
