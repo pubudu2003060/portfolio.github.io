@@ -1,36 +1,42 @@
 /* Base Styles for Blog Section */
 .blog-section {
-  max-width: 1200px;
-  padding: 30px ;/* Top: 32 (8rem), Bottom: 16 (4rem), Horizontal: 4 (1rem) */
+  padding:30px;
   margin: 0 auto;
+  background-color: #f0f5ff; /* Light blue background from About section */
   border-radius: 30px;
-  background: linear-gradient(to bottom, #f0f5ff, #dbeafe);
 }
 
 .blog-inner {
-   /* equivalent to max-w-6xl */
+  max-width: 72rem;
   margin: 0 auto;
-  animation: fade-in 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* Section Title */
-.blog-section .section-title {
-  font-size: 2.25rem; /* text-4xl */
-  font-weight: bold;
-  margin-bottom: 3rem; /* mb-12 */
+.blog-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 48px;
   text-align: center;
-  color: #1e3a8a; /* Changed to dark blue */
+  color: #1e3a8a; /* Dark blue from About section */
+  position: relative;
 }
 
-body.dark .blog-section .section-title {
-  color: #dbeafe; /* Changed to light blue */
+.blog-heading:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6); /* Blue gradient from About section */
+  margin: 12px auto 0;
+  border-radius: 2px;
 }
 
 /* Blog Grid */
 .blog-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem; /* gap-8 */
+  gap: 2.5rem; /* Increased spacing between cards */
 }
 
 @media (min-width: 768px) {
@@ -42,68 +48,86 @@ body.dark .blog-section .section-title {
 /* Blog Card */
 .blog-card {
   background-color: white;
-  border-radius: 1rem; /* rounded-xl */
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  border-radius: 16px; /* Matching border-radius from About section */
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.1); /* Blue tinted shadow */
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-card:hover {
-  transform: translateY(-0.5rem); /* hover-lift effect */
-}
-
-body.dark .blog-card {
-  background-color: #1e40af; /* Changed to dark blue */
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(30, 64, 175, 0.15); /* Enhanced shadow on hover */
 }
 
 /* Blog Image Wrapper */
 .blog-image-wrapper {
   position: relative;
+  height: 200px; /* Fixed height for consistent card appearance */
+  overflow: hidden;
 }
 
 .blog-image {
   width: 100%;
-  height: 16rem; /* h-64 (16rem) */
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-image {
+  transform: scale(1.05); /* Subtle zoom effect on hover */
 }
 
 /* Blog Badge */
 .blog-badge {
   position: absolute;
-  top: 1rem;    /* top-4 */
-  right: 1rem;  /* right-4 */
-  background-color: #1e3a8a; /* Changed to dark blue */
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6); /* Blue gradient */
   color: white;
-  padding: 0.25rem 0.75rem;  /* py-1, px-3 */
-  border-radius: 9999px;     /* rounded-full */
-  font-size: 0.875rem;       /* text-sm */
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(30, 64, 175, 0.2);
 }
 
 /* Blog Content */
 .blog-content {
-  padding: 1.5rem; /* p-6 */
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow content to grow and fill available space */
 }
 
 /* Blog Title */
 .blog-title {
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 600;  /* font-semibold */
-  margin-bottom: 0.75rem; /* mb-3 */
-  color: #1e3a8a; /* Changed to dark blue */
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1e3a8a; /* Dark blue from About section */
+  position: relative;
+  display: inline-block;
 }
 
-body.dark .blog-title {
-  color: #dbeafe; /* Changed to light blue */
+.blog-title:after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  margin-top: 4px;
+  border-radius: 2px;
 }
 
 /* Blog Description */
 .blog-description {
-  color: #334155; /* Changed to dark slate */
-  margin-bottom: 1rem; /* mb-4 */
-}
-
-body.dark .blog-description {
-  color: #f0f5ff; /* Changed to very light blue */
+  color: #334155; /* Matching text color from About */
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1; /* Allow description to grow and push footer to bottom */
 }
 
 /* Blog Footer */
@@ -111,53 +135,81 @@ body.dark .blog-description {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto; /* Push footer to bottom of card */
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
 }
 
 /* Blog Meta (Date and Read Time) */
 .blog-meta {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* space-x-2 */
-  font-size: 0.875rem; /* text-sm */
-  color: #64748b; /* Changed to light slate */
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #64748b; /* Light slate from About */
 }
 
-/* Meta Icons */
-.meta-icon {
-  width: 1rem; /* w-4 */
-  height: 1rem; /* h-4 */
+.blog-date, .blog-readtime {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.blog-date:before {
+  content: '📅';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+}
+
+.blog-readtime:before {
+  content: '⏱️';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
 }
 
 /* Blog Link */
 .blog-link {
   display: flex;
   align-items: center;
-  font-weight: 600; /* font-semibold */
+  font-weight: 600;
   text-decoration: none;
-  color: #3b82f6; /* Changed to medium blue */
-  transition: color 0.3s ease;
+  color: #1e40af; /* Dark blue from About */
+  transition: all 0.3s ease;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  background-color: #dbeafe; /* Light blue background */
 }
 
 .blog-link:hover {
-  color: #1e3a8a; /* Changed to dark blue */
-}
-
-body.dark .blog-link {
-  color: #60a5fa; /* Same medium blue */
-}
-
-body.dark .blog-link:hover {
-  color: #dbeafe; /* Changed to light blue */
+  background-color: #1e40af;
+  color: white;
 }
 
 .link-icon {
-  margin-left: 0.5rem; /* ml-2 */
+  margin-left: 0.5rem;
   width: 1rem;
   height: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.blog-link:hover .link-icon {
+  transform: translateX(4px);
 }
 
 /* Fade-in Animation */
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
