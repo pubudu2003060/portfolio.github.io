@@ -40,7 +40,7 @@
     <div class="header-container">
       <div class="header-content">
 
-        <div class="logo">
+        <div class="logo animate__animated animate__fadeInDown">
           Pubudu Madushan
         </div>
 
@@ -138,8 +138,7 @@
 
       <div class="skills-grid">
 
-        <div class="skill-card">
-
+        <div class="skill-card" data-aos="fade-right" fade-aos-duration="1000">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
@@ -150,7 +149,7 @@
             design integration.</p>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card" data-aos="fade-left" fade-aos-duration="1000">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
@@ -161,7 +160,7 @@
             enhance agility and performance.</p>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card" data-aos="fade-right" fade-aos-duration="1000">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
@@ -172,7 +171,7 @@
             workflows to achieve success.</p>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card" data-aos="fade-left" fade-aos-duration="1000">
           <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M3 10h2l1-2h8l1 2h2M6 14h12M8 18h8M12 6V4m0 0a2 2 0 00-2 2h4a2 2 0 00-2-2z">
@@ -503,7 +502,7 @@
       </p>
       <div class="blog-grid">
 
-        <div class="blog-card">
+        <div class="blog-card"  data-aos="fade-down-right" data-aos-duration="1000">
           <div class="blog-image-wrapper">
             <img src="./assets/b1.webp" alt="From Virtual Machines to Containers" class="blog-image">
             <div class="blog-badge">Cloud Computing</div>
@@ -532,7 +531,7 @@
           </div>
         </div>
 
-        <div class="blog-card">
+        <div class="blog-card" data-aos="fade-down-left" data-aos-duration="1000">
           <div class="blog-image-wrapper">
             <img src="./assets/b2.webp" alt="The Rise of Multi-Cloud Strategies" class="blog-image">
             <div class="blog-badge">Cloud Strategy</div>
@@ -561,7 +560,7 @@
           </div>
         </div>
 
-        <div class="blog-card">
+        <div class="blog-card" data-aos="fade-up-right" data-aos-duration="1000">
           <div class="blog-image-wrapper">
             <img src="./assets/b3.webp" alt="Why Businesses Are Shifting to the Cloud" class="blog-image">
             <div class="blog-badge">Cloud Adoption</div>
@@ -590,7 +589,7 @@
           </div>
         </div>
 
-        <div class="blog-card">
+        <div class="blog-card" data-aos="fade-up-left" data-aos-duration="1000">
           <div class="blog-image-wrapper">
             <img src="./assets/b4.webp" alt="CIA Triad in Cyber Security" class="blog-image">
             <div class="blog-badge">Cyber Security</div>
@@ -857,7 +856,11 @@
   <script src="index.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+    disable: function () {
+      return window.innerWidth < 768; 
+    }
+  });
   </script>
 </body>
 
