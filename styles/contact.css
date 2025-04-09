@@ -25,18 +25,23 @@
   margin-bottom: 1rem;
 }
 
-body.dark .contact-title {
-  color: #dbeafe;
+.contact-title:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6); 
+  margin: 4px auto;
+  border-radius: 2px;
 }
+
 
 .contact-subtitle {
   font-size: 1.125rem; 
   color: #334155;
 }
 
-body.dark .contact-subtitle {
-  color: #e2e8f0;
-}
+
 
 
 .contact-content {
@@ -54,15 +59,13 @@ body.dark .contact-subtitle {
 
 .contact-card {
   background-color: #fff;
-  border-radius: 0.5rem; /* rounded-lg */
+  border-radius: 0.5rem; 
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  padding: 2rem; /* p-8 */
+  padding: 2rem; 
   transition: all 0.3s ease;
 }
 
-body.dark .contact-card {
-  background-color: #1e40af;
-}
+
 
 .form-note {
   font-size: 0.9rem;
@@ -82,6 +85,16 @@ body.dark .contact-card {
   font-weight: 600;
   color: #1e3a8a; 
   margin-bottom: 1.5rem; 
+}
+
+.contact-card-title:after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6); 
+  
+  border-radius: 2px;
 }
 
 body.dark .contact-card-title {
