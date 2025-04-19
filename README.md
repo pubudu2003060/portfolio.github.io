@@ -33,4 +33,4 @@ You can view the live website here: [Portfolio Website](https://pubudu-madhushan
 - Organized sections for projects, skills, and contact information.
 
 ## Feedback
-If you have any suggestions or feedback, feel free to open an issue or contact me directly via email at [madushanp835l@gmail.com].
+If you have any suggestions or feedback, feel free to open an issue or contact me directly via email at [madushanp835@gmail.com].
