@@ -1,7 +1,7 @@
 # Portfolio Website
 
 ## Home Page
-![Home Page](./assets/homepage.png)
+![Home Page](./SE2021060/assets/homepage.png)
 
 ## Project Description
 This is a personal portfolio website showcasing projects, skills, and experiences. It is designed to provide an overview of professional achievements and serve as an online resume.
