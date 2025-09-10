@@ -1,7 +1,7 @@
 # Portfolio Website
 
 ## Home Page
-![Home Page](./SE2021060/assets/homepage.png)
+![Home Page](./assets/homepage.png)
 
 ## Project Description
 This is a personal portfolio website showcasing projects, skills, and experiences. It is designed to provide an overview of professional achievements and serve as an online resume.
@@ -33,4 +33,4 @@ You can view the live website here: [Portfolio Website](https://pubudu-madhushan
 - Organized sections for projects, skills, and contact information.
 
 ## Feedback
-If you have any suggestions or feedback, feel free to open an issue or contact me directly via email at [madushanp835@gmail.com].
+If you have any suggestions or feedback, feel free to open an issue or contact me directly via email at [your-email@example.com].
