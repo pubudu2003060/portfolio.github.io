@@ -1,36 +1,12 @@
-# Portfolio Website
+# React + Vite
 
-## Home Page
-![Home Page](./assets/homepage.png)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Project Description
-This is a personal portfolio website showcasing projects, skills, and experiences. It is designed to provide an overview of professional achievements and serve as an online resume.
+Currently, two official plugins are available:
 
-## Libraries Used
-- HTML5
-- CSS3
-- JavaScript
-- [AOS](https://michalsnik.github.io/aos/) (for Animations)
-- [animate.css](https://animate.style/) (for Animations)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Live Hosted Link
-You can view the live website here: [Portfolio Website](https://pubudu-madhushan.netlify.app/)
+## Expanding the ESLint configuration
 
-## How to Run the Project Locally
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/SE2021060.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd SE2021060
-    ```
-3. Open the `index.html` file in your browser to view the website locally.
-
-## Features
-- Responsive design for mobile and desktop devices.
-- Smooth scrolling and animations.
-- Organized sections for projects, skills, and contact information.
-
-## Feedback
-If you have any suggestions or feedback, feel free to open an issue or contact me directly via email at [your-email@example.com].
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
