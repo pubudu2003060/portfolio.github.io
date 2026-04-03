@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
-import { Float, Text3D, Center } from "@react-three/drei";
-import { useRef } from "react";
 import FloatingElements from "../three/FloatingElements";
 import myImage from "../../assets/WhatsApp Image 2025-04-02 at 18.57.22_f2dd64ce.jpg";
 
@@ -14,7 +12,7 @@ function HeroContent() {
   };
 
   const textVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -23,7 +21,7 @@ function HeroContent() {
   };
 
   const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.9 },
     visible: {
       opacity: 1,
       scale: 1,
@@ -31,7 +29,7 @@ function HeroContent() {
     },
     hover: {
       scale: 1.05,
-      boxShadow: "0 10px 30px rgba(30, 64, 175, 0.3)",
+      boxShadow: "0 0 20px rgba(6, 182, 212, 0.4)",
       transition: { duration: 0.3 },
     },
     tap: { scale: 0.95 },
@@ -50,11 +48,11 @@ function HeroContent() {
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
           variants={textVariants}
         >
-          Hi, I'm Pubudu Madushan
+          Hi, I'm <span className="gradient-text">Pubudu Madushan</span>
         </motion.h1>
 
         <motion.p
-          className="text-lg md:text-xl text-blue-100 mb-4 leading-relaxed"
+          className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed"
           variants={textVariants}
         >
           I'm a Third-year Software Engineering undergraduate fascinated by
@@ -66,14 +64,14 @@ function HeroContent() {
         </motion.p>
 
         <motion.p
-          className="text-xl text-yellow-300 font-semibold mb-4"
+          className="text-xl gradient-text-cyan font-semibold mb-4"
           variants={textVariants}
         >
           Coding the future, one innovative idea at a time.
         </motion.p>
 
         <motion.p
-          className="text-base text-blue-200 mb-8 italic"
+          className="text-base text-slate-400 mb-8 italic"
           variants={textVariants}
         >
           Discover how my work transforms challenges into cutting-edge digital
@@ -89,7 +87,7 @@ function HeroContent() {
         >
           <motion.button
             onClick={() => scrollToSection("#contact")}
-            className="bg-white text-blue-800 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
@@ -100,7 +98,7 @@ function HeroContent() {
 
           <motion.button
             onClick={() => scrollToSection("#projects")}
-            className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300"
+            className="border-2 border-slate-600 text-slate-300 px-8 py-4 rounded-full font-semibold text-lg hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-slate-800/50 transition-all duration-300"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
@@ -119,9 +117,12 @@ function HeroContent() {
         transition={{ duration: 1, delay: 0.3 }}
       >
         <div className="relative">
+          {/* Animated Glow Effect */}
+          <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 opacity-20 blur-xl animate-pulse" />
+          
           {/* Profile Image */}
           <motion.div
-            className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl"
+            className="relative w-80 h-80 rounded-full overflow-hidden gradient-border shadow-2xl bg-slate-900"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.5 }}
           >
@@ -129,21 +130,6 @@ function HeroContent() {
               src={myImage}
               alt="Pubudu Madushan"
               className="w-full h-full object-cover"
-            />
-
-            {/* Animated Glow Effect */}
-            <motion.div
-              className="absolute inset-0 bg-yellow-300/30 rounded-full"
-              animate={{
-                scale: [1, 1.1, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              style={{ filter: "blur(20px)", zIndex: -1 }}
             />
           </motion.div>
         </div>
@@ -156,40 +142,25 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen bg-gradient-to-br from-blue-800 via-blue-900 to-indigo-900 overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 overflow-hidden"
     >
       {/* Three.js Background Animation */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 opacity-60">
         <Canvas camera={{ position: [0, 0, 5] }}>
           <FloatingElements />
           <ambientLight intensity={0.4} />
-          <pointLight position={[10, 10, 10]} intensity={0.8} color="#60a5fa" />
+          <pointLight position={[10, 10, 10]} intensity={0.8} color="#06b6d4" />
         </Canvas>
       </div>
 
       {/* Background Pattern SVG */}
-      <div className="absolute inset-0 z-10 opacity-20">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern
-              id="pattern"
-              x="0"
-              y="0"
-              width="100"
-              height="100"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M0 50 Q25 25, 50 50 T100 50"
-                stroke="white"
-                fill="none"
-                strokeWidth="1"
-              />
-            </pattern>
-          </defs>
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)" />
-        </svg>
-      </div>
+      <div className="absolute inset-0 z-10 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(6,182,212,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.5) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
 
       {/* Main Content */}
       <div className="relative z-20 flex items-center min-h-screen pt-20">

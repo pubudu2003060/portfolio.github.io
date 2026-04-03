@@ -15,28 +15,28 @@ const skillsData = [
     title: "Full Stack Development",
     description:
       "Developing end-to-end applications using frontend technologies like React.js and backend frameworks like Node.js, Express.js, and Spring Boot, with databases such as MongoDB and MySQL.",
-    color: "from-indigo-500 to-purple-400",
+    gradient: "from-cyan-500 to-blue-500",
   },
   {
     icon: Smartphone,
     title: "Mobile App Development",
     description:
       "Creating cross-platform mobile applications with React Native and Flutter, including features like user authentication, data synchronization, and real-time notifications.",
-    color: "from-teal-500 to-blue-400",
+    gradient: "from-blue-500 to-violet-500",
   },
   {
     icon: Users,
     title: "Project Management",
     description:
       "Collaborating and delivering projects from idea to launch. I ensure effective communication and streamline workflows to achieve success.",
-    color: "from-green-500 to-teal-400",
+    gradient: "from-violet-500 to-purple-500",
   },
   {
     icon: Wrench,
     title: "DevOps Engineering",
     description:
       "Automating workflows and bridging dev and ops for smoother software delivery. I'm passionate about creating reliable pipelines that reduce manual overhead.",
-    color: "from-orange-500 to-red-400",
+    gradient: "from-purple-500 to-pink-500",
   },
 ];
 
@@ -49,7 +49,7 @@ function SkillCard({ skill, index }) {
   return (
     <motion.div
       ref={cardRef}
-      className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 border-blue-600 group"
+      className="glass-card p-8 rounded-2xl shadow-lg hover:shadow-cyan-500/10 transition-all duration-500 border-t-4 border-cyan-500 group"
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={
         cardInView
@@ -61,7 +61,7 @@ function SkillCard({ skill, index }) {
     >
       {/* Icon with gradient background */}
       <motion.div
-        className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${skill.color} flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300`}
+        className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${skill.gradient} flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300`}
         whileHover={{ rotate: 5 }}
       >
         <skill.icon className="w-8 h-8 text-white" />
@@ -69,10 +69,10 @@ function SkillCard({ skill, index }) {
 
       {/* Title with underline effect */}
       <div className="text-center mb-4">
-        <h3 className="text-xl font-bold text-blue-800 mb-2 relative inline-block group-hover:text-blue-900 transition-colors duration-300">
+        <h3 className="text-xl font-bold text-white mb-2 relative inline-block group-hover:text-cyan-300 transition-colors duration-300">
           {skill.title}
           <motion.div
-            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-800 to-blue-600 rounded"
+            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded"
             initial={{ width: "50%" }}
             whileInView={{ width: "100%" }}
             transition={{ delay: index * 0.2 + 0.5, duration: 0.6 }}
@@ -83,19 +83,13 @@ function SkillCard({ skill, index }) {
 
       {/* Description */}
       <motion.p
-        className="text-gray-600 text-center leading-relaxed"
+        className="text-slate-400 text-center leading-relaxed"
         initial={{ opacity: 0 }}
         animate={cardInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ delay: index * 0.2 + 0.3, duration: 0.8 }}
       >
         {skill.description}
       </motion.p>
-
-      {/* Hover effect overlay */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"
-        initial={false}
-      />
     </motion.div>
   );
 }
@@ -126,7 +120,7 @@ function Intro() {
   return (
     <section
       id="intro"
-      className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
+      className="py-20 bg-slate-900"
     >
       <motion.div
         ref={ref}
@@ -138,10 +132,10 @@ function Intro() {
         {/* Section Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
           <div className="relative inline-block">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-800 mb-6">
-              Welcome to my Digital Space
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Welcome to my <span className="gradient-text">Digital Space</span>
             </h2>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-800 to-blue-600 rounded"></div>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded"></div>
           </div>
         </motion.div>
 
@@ -150,12 +144,12 @@ function Intro() {
           className="text-center mb-16 max-w-4xl mx-auto"
           variants={itemVariants}
         >
-          <p className="text-lg font-medium text-gray-700 mb-4 leading-relaxed">
+          <p className="text-lg font-medium text-slate-300 mb-4 leading-relaxed">
             My mission is to transform challenges into innovative, user-centric
             applications. I strive to blend technical expertise with creative
             solutions that bring ideas to life.
           </p>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-slate-400 leading-relaxed">
             I thrive on turning complexity into simplicity through cutting-edge
             technology and relentless curiosity. Here you'll find a showcase of
             my skills, projects, and insights.
@@ -175,10 +169,10 @@ function Intro() {
         {/* Call to Action */}
         <motion.div className="text-center mt-16" variants={itemVariants}>
           <motion.div
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-800 to-blue-600 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl cursor-pointer"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-cyan-500/20 cursor-pointer transition-all duration-300"
             whileHover={{
               scale: 1.05,
-              boxShadow: "0 20px 40px rgba(30, 64, 175, 0.3)",
+              y: -2,
             }}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
@@ -210,20 +204,18 @@ function Intro() {
         {/* Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-20 left-10 w-32 h-32 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+            className="absolute top-20 left-10 w-32 h-32 bg-cyan-500/10 rounded-full filter blur-3xl"
             animate={{
               scale: [1, 1.2, 1],
-              x: [0, 30, 0],
-              y: [0, -20, 0],
+              opacity: [0.1, 0.3, 0.1],
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute bottom-20 right-10 w-40 h-40 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+            className="absolute bottom-20 right-10 w-40 h-40 bg-violet-500/10 rounded-full filter blur-3xl"
             animate={{
               scale: [1.2, 1, 1.2],
-              x: [0, -20, 0],
-              y: [0, 30, 0],
+              opacity: [0.1, 0.3, 0.1],
             }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           />

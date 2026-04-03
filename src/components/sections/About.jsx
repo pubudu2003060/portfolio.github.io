@@ -148,18 +148,18 @@ const skillsData = {
 function SkillCard({ skill, index }) {
   return (
     <motion.div
-      className="flex items-center bg-blue-800 rounded-lg p-3 shadow-lg hover:shadow-xl transition-all duration-300"
+      className="flex items-center bg-slate-800/50 rounded-lg p-3 shadow-lg hover:bg-slate-800 transition-all duration-300 border border-slate-700/50"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      whileHover={{ scale: 1.05, y: -5 }}
+      whileHover={{ scale: 1.05, y: -5, borderColor: "rgba(6,182,212,0.5)" }}
     >
       <img
         src={skill.icon}
         alt={`${skill.name} Logo`}
         className="w-12 h-12 object-contain mr-3"
       />
-      <span className="text-white font-semibold">{skill.name}</span>
+      <span className="text-slate-200 font-semibold">{skill.name}</span>
     </motion.div>
   );
 }
@@ -170,8 +170,8 @@ function TabButton({ id, label, isActive, onClick }) {
       onClick={() => onClick(id)}
       className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
         isActive
-          ? "bg-white text-blue-800 border-2 border-blue-600 shadow-lg"
-          : "bg-gray-200 text-gray-600 hover:bg-blue-100 hover:text-blue-800"
+          ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20"
+          : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white"
       }`}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
@@ -198,40 +198,40 @@ function About() {
     return (
       <motion.div
         key={activeTab}
-        className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+        className="glass-card rounded-2xl p-8 transition-shadow duration-300 relative z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <div className="relative">
-          <h3 className="text-2xl font-bold text-blue-800 mb-6 relative inline-block">
+          <h3 className="text-2xl font-bold text-white mb-6 relative inline-block">
             {data.title}
-            <div className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-gradient-to-r from-blue-800 to-blue-600 rounded"></div>
+            <div className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded"></div>
           </h3>
         </div>
 
-        <p className="text-gray-600 mb-6 leading-relaxed">{data.description}</p>
+        <p className="text-slate-300 mb-6 leading-relaxed">{data.description}</p>
 
         {activeTab === "education" ? (
           <div>
             {data.items.map((item, index) => (
               <motion.div
                 key={index}
-                className="border-b border-gray-200 pb-6 mb-6 last:border-b-0 last:mb-0"
+                className="border-b border-slate-700 pb-6 mb-6 last:border-b-0 last:mb-0"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.2, duration: 0.5 }}
               >
-                <h4 className="text-xl font-bold text-blue-800 mb-2">
+                <h4 className="text-xl font-bold text-cyan-400 mb-2">
                   {item.school}
                 </h4>
-                <p className="text-gray-700 font-medium mb-1">{item.degree}</p>
-                <p className="text-gray-500 text-sm">{item.date}</p>
+                <p className="text-slate-200 font-medium mb-1">{item.degree}</p>
+                <p className="text-slate-400 text-sm">{item.date}</p>
               </motion.div>
             ))}
 
             <div className="mt-8">
-              <h4 className="text-lg font-bold text-blue-800 mb-4">
+              <h4 className="text-lg font-bold text-white mb-4">
                 Relevant Coursework
               </h4>
               <div className="space-y-3">
@@ -249,7 +249,7 @@ function About() {
                       href={cert.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-blue-800 hover:text-blue-600 transition-colors duration-200"
+                      className="block text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
                     >
                       {cert.title} - {cert.provider}
                     </a>
@@ -261,7 +261,7 @@ function About() {
                 href="https://www.linkedin.com/in/pubudu-madhushan-0b0621292/details/certifications/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center mt-6 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors duration-200"
+                className="inline-flex items-center mt-6 px-4 py-2 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors duration-200 border border-slate-700"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -286,7 +286,7 @@ function About() {
           <div className="space-y-8">
             {data.subsections.map((subsection, subIndex) => (
               <div key={subIndex}>
-                <h4 className="text-xl font-bold text-blue-800 mb-4">
+                <h4 className="text-xl font-bold text-cyan-400 mb-4">
                   {subsection.title}
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -309,8 +309,12 @@ function About() {
   };
 
   return (
-    <section id="about" className="py-20 bg-blue-50">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="about" className="py-20 bg-slate-950 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-cyan-500/10 rounded-full blur-3xl" />
+
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -319,13 +323,13 @@ function About() {
           className="text-center mb-16"
         >
           <div className="relative inline-block">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-800 mb-6">
-              About Me
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              About <span className="gradient-text-cyan">Me</span>
             </h2>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-800 to-blue-600 rounded"></div>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded"></div>
           </div>
 
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mt-8">
+          <p className="text-lg text-slate-300 max-w-4xl mx-auto leading-relaxed mt-8">
             I'm a dedicated software engineering undergraduate fueled by passion
             for technology and innovation. Through hands-on projects, continued
             learning, and real-world challenges, I strive to create practical

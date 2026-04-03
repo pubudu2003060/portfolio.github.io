@@ -5,38 +5,42 @@ import { Menu, X } from "lucide-react";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Track active section via Intersection Observer
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, []);
+
   const navLinks = [
-    { href: "#hero", label: "Home", title: "Home" },
-    {
-      href: "#intro",
-      label: "Intro",
-      title: "Intro - Welcome to my Digital Space",
-    },
-    {
-      href: "#about",
-      label: "About",
-      title: "About - Learn my journey and skills",
-    },
-    {
-      href: "#projects",
-      label: "Projects",
-      title: "Projects - Check out my work",
-    },
-    {
-      href: "#blog",
-      label: "Blog",
-      title: "Blog - Read my latest tech insights",
-    },
+    { href: "#hero", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#timeline", label: "Journey" },
+    { href: "#projects", label: "Projects" },
+    { href: "#blog", label: "Blog" },
+    { href: "#github", label: "GitHub" },
   ];
 
   const scrollToSection = (href) => {
@@ -49,46 +53,73 @@ function Header() {
 
   return (
     <motion.header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-blue-50/80 backdrop-blur-md shadow-sm"
-          : "bg-blue-50/95 backdrop-blur-sm"
+          ? "glass shadow-lg shadow-black/10"
+          : "bg-transparent"
       }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
+      role="banner"
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <motion.div
-            className="text-2xl font-bold text-blue-800 tracking-tight"
-            whileHover={{ scale: 1.05 }}
+          <motion.button
+            onClick={() => scrollToSection("#hero")}
+            className="flex items-center gap-3 group"
+            whileHover={{ scale: 1.03 }}
+            aria-label="Go to homepage"
           >
-            Pubudu Madushan
-          </motion.div>
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="w-9 h-9 rounded-lg"
+            />
+            <span className="text-xl font-bold text-white tracking-tight group-hover:text-cyan-400 transition-colors duration-300">
+              Pubudu<span className="text-cyan-400">.</span>
+            </span>
+          </motion.button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <motion.button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-gray-600 hover:text-blue-800 font-medium transition-colors duration-200"
-                title={link.title}
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-              >
-                {link.label}
-              </motion.button>
-            ))}
+          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+            {navLinks.map((link) => {
+              const sectionId = link.href.replace("#", "");
+              const isActive = activeSection === sectionId;
+              return (
+                <motion.button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-300 ${
+                    isActive
+                      ? "text-cyan-400"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                  aria-label={`Navigate to ${link.label}`}
+                  aria-current={isActive ? "page" : undefined}
+                  whileHover={{ y: -1 }}
+                  whileTap={{ y: 0 }}
+                >
+                  {link.label}
+                  {/* Active indicator */}
+                  {isActive && (
+                    <motion.div
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
+                      layoutId="activeNav"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                </motion.button>
+              );
+            })}
           </nav>
 
-          {/* Contact Button - Desktop */}
+          {/* Contact Button — Desktop */}
           <motion.button
             onClick={() => scrollToSection("#contact")}
-            className="hidden md:block bg-blue-800 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-900 transition-colors duration-200"
-            title="Contact - Let's connect"
+            className="hidden md:flex items-center px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold rounded-full hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
+            aria-label="Navigate to Contact section"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -98,8 +129,8 @@ function Header() {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-blue-800"
-            title="Menu"
+            className="md:hidden p-2 text-slate-400 hover:text-white rounded-lg"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             whileTap={{ scale: 0.9 }}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -107,43 +138,50 @@ function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <motion.div
-          className={`md:hidden overflow-hidden ${
-            isMenuOpen ? "max-h-96" : "max-h-0"
-          }`}
+        <motion.nav
+          className="md:hidden overflow-hidden"
           initial={false}
           animate={{
-            maxHeight: isMenuOpen ? 384 : 0,
+            height: isMenuOpen ? "auto" : 0,
             opacity: isMenuOpen ? 1 : 0,
           }}
           transition={{ duration: 0.3 }}
+          aria-label="Mobile navigation"
         >
-          <div className="py-4 space-y-2 bg-blue-100/50 rounded-lg mb-4">
-            {navLinks.map((link, index) => (
-              <motion.button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-blue-200/50 rounded-md transition-colors duration-200"
-                title={link.title}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                {link.label}
-              </motion.button>
-            ))}
+          <div className="py-4 space-y-1 glass-card rounded-xl mb-4 px-2">
+            {navLinks.map((link, index) => {
+              const sectionId = link.href.replace("#", "");
+              const isActive = activeSection === sectionId;
+              return (
+                <motion.button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className={`block w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? "text-cyan-400 bg-cyan-500/10"
+                      : "text-slate-400 hover:text-white hover:bg-white/5"
+                  }`}
+                  aria-label={`Navigate to ${link.label}`}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  {link.label}
+                </motion.button>
+              );
+            })}
             <motion.button
               onClick={() => scrollToSection("#contact")}
-              className="block w-full text-left px-4 py-3 bg-blue-800 text-white rounded-md font-semibold hover:bg-blue-900 transition-colors duration-200"
-              title="Contact - Let's connect"
+              className="block w-full text-left px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold text-sm"
+              aria-label="Navigate to Contact section"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: navLinks.length * 0.1 }}
+              transition={{ delay: navLinks.length * 0.05 }}
             >
               Contact
             </motion.button>
           </div>
-        </motion.div>
+        </motion.nav>
       </div>
     </motion.header>
   );

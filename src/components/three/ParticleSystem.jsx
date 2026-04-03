@@ -1,42 +1,52 @@
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
 
-function Particles({ count = 200 }) {
+function Particles({ count = 250 }) {
   const mesh = useRef();
   const light = useRef();
 
-  // Generate random positions for particles
   const particles = useMemo(() => {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
 
     for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 20;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
+      positions[i * 3] = (Math.random() - 0.5) * 25;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 25;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 25;
 
-      // Blue theme colors
-      colors[i * 3] = 0.2 + Math.random() * 0.3; // Red
-      colors[i * 3 + 1] = 0.4 + Math.random() * 0.4; // Green
-      colors[i * 3 + 2] = 0.8 + Math.random() * 0.2; // Blue
+      // Cyan / Blue / Violet color palette
+      const colorChoice = Math.random();
+      if (colorChoice < 0.33) {
+        // Cyan
+        colors[i * 3] = 0.02;
+        colors[i * 3 + 1] = 0.6 + Math.random() * 0.3;
+        colors[i * 3 + 2] = 0.8 + Math.random() * 0.2;
+      } else if (colorChoice < 0.66) {
+        // Blue
+        colors[i * 3] = 0.2 + Math.random() * 0.1;
+        colors[i * 3 + 1] = 0.3 + Math.random() * 0.2;
+        colors[i * 3 + 2] = 0.9 + Math.random() * 0.1;
+      } else {
+        // Violet
+        colors[i * 3] = 0.5 + Math.random() * 0.2;
+        colors[i * 3 + 1] = 0.2 + Math.random() * 0.2;
+        colors[i * 3 + 2] = 0.9 + Math.random() * 0.1;
+      }
     }
 
     return { positions, colors };
   }, [count]);
 
-  // Animate particles
   useFrame((state) => {
     const time = state.clock.elapsedTime;
 
     if (mesh.current) {
-      mesh.current.rotation.x = time * 0.1;
-      mesh.current.rotation.y = time * 0.15;
+      mesh.current.rotation.x = time * 0.05;
+      mesh.current.rotation.y = time * 0.08;
 
-      // Update particle positions for floating effect
       const positions = mesh.current.geometry.attributes.position.array;
       for (let i = 0; i < count; i++) {
-        positions[i * 3 + 1] += Math.sin(time + i) * 0.01;
+        positions[i * 3 + 1] += Math.sin(time + i) * 0.008;
       }
       mesh.current.geometry.attributes.position.needsUpdate = true;
     }
@@ -49,12 +59,12 @@ function Particles({ count = 200 }) {
 
   return (
     <group>
-      <ambientLight intensity={0.1} />
+      <ambientLight intensity={0.15} />
       <pointLight
         ref={light}
         position={[10, 10, 10]}
-        intensity={0.5}
-        color="#3b82f6"
+        intensity={0.4}
+        color="#06b6d4"
       />
 
       <points ref={mesh}>
@@ -73,10 +83,10 @@ function Particles({ count = 200 }) {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.05}
+          size={0.07}
           vertexColors
           transparent
-          opacity={0.6}
+          opacity={0.7}
           sizeAttenuation
         />
       </points>
@@ -90,7 +100,7 @@ function ParticleSystem() {
       camera={{ position: [0, 0, 15], fov: 75 }}
       style={{ background: "transparent" }}
     >
-      <Particles count={150} />
+      <Particles count={200} />
     </Canvas>
   );
 }

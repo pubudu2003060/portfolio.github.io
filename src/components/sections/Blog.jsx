@@ -19,7 +19,7 @@ const blogData = [
     date: "Sep 7, 2025",
     readTime: "4 min read",
     url: "https://medium.com/@madushanp835/building-a-secure-mern-application-1bed83d48064",
-    categoryColor: "from-indigo-500 to-purple-400",
+    categoryColor: "from-indigo-500 to-purple-500",
   },
   {
     id: 6,
@@ -31,7 +31,7 @@ const blogData = [
     date: "May 27, 2025",
     readTime: "5 min read",
     url: "https://medium.com/@madushanp835/from-docker-to-kubernetes-7dc1519924d6",
-    categoryColor: "from-teal-500 to-green-400",
+    categoryColor: "from-emerald-500 to-green-500",
   },
   {
     id: 1,
@@ -43,7 +43,7 @@ const blogData = [
     date: "Mar 18, 2025",
     readTime: "6 min read",
     url: "https://medium.com/@madushanp835/from-virtual-machines-to-containers-6d0bee648b93",
-    categoryColor: "from-blue-500 to-cyan-400",
+    categoryColor: "from-blue-500 to-cyan-500",
   },
   {
     id: 2,
@@ -55,7 +55,7 @@ const blogData = [
     date: "Nov 16, 2024",
     readTime: "7 min read",
     url: "https://medium.com/@madushanp835/the-rise-of-multi-cloud-strategies-a4f815d17e81",
-    categoryColor: "from-purple-500 to-pink-400",
+    categoryColor: "from-fuchsia-500 to-pink-500",
   },
   {
     id: 3,
@@ -67,7 +67,7 @@ const blogData = [
     date: "Nov 16, 2024",
     readTime: "5 min read",
     url: "https://medium.com/@madushanp835/why-businesses-are-shifting-to-the-cloud-d09f515ef280",
-    categoryColor: "from-green-500 to-teal-400",
+    categoryColor: "from-green-500 to-teal-500",
   },
   {
     id: 4,
@@ -79,7 +79,7 @@ const blogData = [
     date: "Sep 29, 2023",
     readTime: "2 min read",
     url: "https://medium.com/@madushanp835/cia-triad-in-cyber-security-ee606a2eabb",
-    categoryColor: "from-red-500 to-orange-400",
+    categoryColor: "from-red-500 to-orange-500",
   },
 ];
 
@@ -92,7 +92,7 @@ function BlogCard({ blog, index }) {
   return (
     <motion.article
       ref={cardRef}
-      className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group"
+      className="glass-card rounded-2xl shadow-lg hover:shadow-cyan-500/10 transition-all duration-500 overflow-hidden group flex flex-col h-full"
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={
         cardInView
@@ -103,7 +103,7 @@ function BlogCard({ blog, index }) {
       whileHover={{ y: -8, transition: { duration: 0.3 } }}
     >
       {/* Image Section */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-48 overflow-hidden flex-shrink-0">
         <motion.img
           src={blog.image}
           alt={blog.title}
@@ -119,22 +119,20 @@ function BlogCard({ blog, index }) {
             {blog.category}
           </span>
         </div>
-
-        {/* Overlay on hover */}
       </div>
 
       {/* Content Section */}
-      <div className="p-6 flex flex-col h-64">
+      <div className="p-6 flex flex-col flex-grow">
         <div className="flex-grow">
           <motion.h3
-            className="text-xl font-bold text-blue-800 mb-3 line-clamp-2 group-hover:text-blue-900 transition-colors duration-300"
+            className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-cyan-300 transition-colors duration-300"
             initial={{ opacity: 0 }}
             animate={cardInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: index * 0.15 + 0.2, duration: 0.6 }}
           >
             {blog.title}
             <motion.div
-              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-800 to-blue-600 rounded mt-1"
+              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded mt-1"
               initial={{ width: "0%" }}
               whileInView={{ width: "70%" }}
               transition={{ delay: index * 0.15 + 0.5, duration: 0.8 }}
@@ -143,7 +141,7 @@ function BlogCard({ blog, index }) {
           </motion.h3>
 
           <motion.p
-            className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4"
+            className="text-slate-400 text-sm leading-relaxed line-clamp-3 mb-4"
             initial={{ opacity: 0 }}
             animate={cardInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: index * 0.15 + 0.3, duration: 0.6 }}
@@ -154,13 +152,13 @@ function BlogCard({ blog, index }) {
 
         {/* Footer */}
         <motion.div
-          className="flex justify-between items-center pt-4 border-t border-gray-100"
+          className="flex justify-between items-center pt-4 border-t border-slate-700 mt-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={cardInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: index * 0.15 + 0.4, duration: 0.6 }}
         >
           {/* Meta Information */}
-          <div className="flex items-center space-x-4 text-sm text-gray-500">
+          <div className="flex items-center space-x-4 text-sm text-slate-500">
             <div className="flex items-center">
               <Calendar size={14} className="mr-1" />
               <span>{blog.date}</span>
@@ -176,7 +174,7 @@ function BlogCard({ blog, index }) {
             href={blog.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-lg hover:bg-blue-800 hover:text-white transition-colors duration-300 font-medium text-sm"
+            className="inline-flex items-center px-4 py-2 bg-slate-800 text-cyan-400 rounded-lg hover:bg-slate-700 hover:text-white transition-colors duration-300 font-medium text-sm border border-slate-700"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             title="Read the full post"
@@ -217,10 +215,12 @@ function Blog() {
   };
 
   return (
-    <section id="blog" className="py-20 bg-blue-50">
+    <section id="blog" className="py-20 bg-slate-950 relative">
+      <div className="absolute top-1/4 left-0 w-full h-1/2 bg-gradient-to-r from-cyan-900/10 to-violet-900/10 blur-3xl" />
+      
       <motion.div
         ref={ref}
-        className="max-w-7xl mx-auto px-4"
+        className="max-w-7xl mx-auto px-4 relative z-10"
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -228,14 +228,14 @@ function Blog() {
         {/* Section Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
           <div className="relative inline-block">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-800 mb-6">
-              Latest Insights
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Latest <span className="gradient-text">Insights</span>
             </h2>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-800 to-blue-600 rounded"></div>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded"></div>
           </div>
 
           <motion.p
-            className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mt-8"
+            className="text-lg text-slate-300 max-w-4xl mx-auto leading-relaxed mt-8"
             variants={itemVariants}
           >
             Welcome to my blog — your go-to spot for in-depth explorations on
@@ -261,11 +261,10 @@ function Blog() {
             href="https://medium.com/@madushanp835"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-blue-800 text-white rounded-full font-semibold text-lg hover:bg-blue-900 transition-colors duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
             whileHover={{
               scale: 1.05,
               y: -2,
-              boxShadow: "0 20px 40px rgba(30, 64, 175, 0.3)",
             }}
             whileTap={{ scale: 0.95 }}
             title="Visit my Medium profile for more articles"
@@ -288,28 +287,6 @@ function Blog() {
             </motion.svg>
           </motion.a>
         </motion.div>
-
-        {/* Decorative Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            className="absolute top-1/4 left-8 w-24 h-24 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-40"
-            animate={{
-              scale: [1, 1.3, 1],
-              x: [0, 40, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute bottom-1/4 right-8 w-32 h-32 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-40"
-            animate={{
-              scale: [1.3, 1, 1.3],
-              x: [0, -30, 0],
-              y: [0, 40, 0],
-            }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
       </motion.div>
     </section>
   );

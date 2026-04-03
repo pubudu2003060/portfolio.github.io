@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Play } from "lucide-react";
+import { useState, useRef } from "react";
 import lexaura from "../../assets/LUXEAURA COSMETICS - Google Chrome 2025-04-06 12-56-57.mp4";
 import fuleweb from "../../assets/Pass My Fuel Admin - Google Chrome 2025-04-06 13-09-02.mp4";
 import noteShareVideo from "../../assets/note-sharing-platform.mp4";
@@ -157,11 +158,25 @@ function ProjectCard({ project, index }) {
     triggerOnce: true,
     threshold: 0.1,
   });
+  
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const toggleVideo = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   return (
     <motion.div
       ref={cardRef}
-      className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden relative"
+      className="glass-card rounded-2xl shadow-lg hover:shadow-cyan-500/10 transition-all duration-500 overflow-hidden relative"
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={
         cardInView
@@ -173,38 +188,45 @@ function ProjectCard({ project, index }) {
     >
       {/* Category Badge */}
       <div className="absolute top-5 right-5 z-20">
-        <span className="bg-gradient-to-r from-blue-800 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+        <span className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
           {project.category}
         </span>
       </div>
 
       <div className="flex flex-col md:flex-row">
         {/* Video Section */}
-        <div className="w-full md:w-2/5 bg-blue-50 relative">
-          <motion.div
-            className="h-full"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
+        <div className="w-full md:w-2/5 bg-slate-900 relative group cursor-pointer" onClick={toggleVideo}>
+          <div className="h-full relative overflow-hidden rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none">
             <video
+              ref={videoRef}
               src={project.video}
-              autoPlay
               muted
               loop
-              className="w-full h-64 md:h-full object-contain rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"
+              playsInline
+              className="w-full h-64 md:h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              onEnded={() => setIsPlaying(false)}
             />
-          </motion.div>
+            
+            {/* Play Button Overlay */}
+            {!isPlaying && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/50 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                   <Play className="w-8 h-8 text-white fill-white ml-1" />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Content Section */}
-        <div className="w-full md:w-3/5 p-8 flex flex-col justify-between">
+        <div className="w-full md:w-3/5 p-8 flex flex-col justify-between decoration-slate-300/10">
           <div>
-            <h3 className="text-2xl font-bold text-blue-800 mb-4 relative inline-block">
+            <h3 className="text-2xl font-bold text-white mb-4 relative inline-block">
               {project.title}
-              <div className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-gradient-to-r from-blue-800 to-blue-600 rounded"></div>
+              <div className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded"></div>
             </h3>
 
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-slate-300 mb-6 leading-relaxed">
               {project.description}
             </p>
 
@@ -214,7 +236,7 @@ function ProjectCard({ project, index }) {
                 {project.highlights.map((highlight, idx) => (
                   <motion.li
                     key={idx}
-                    className="flex items-center text-gray-600 text-sm"
+                    className="flex items-center text-slate-400 text-sm"
                     initial={{ opacity: 0, x: -20 }}
                     animate={
                       cardInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
@@ -224,7 +246,7 @@ function ProjectCard({ project, index }) {
                       duration: 0.5,
                     }}
                   >
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-cyan-500 rounded-full mr-3 flex-shrink-0"></span>
                     {highlight}
                   </motion.li>
                 ))}
@@ -237,7 +259,7 @@ function ProjectCard({ project, index }) {
                 {project.technologies.map((tech, idx) => (
                   <motion.span
                     key={tech}
-                    className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-800 hover:text-white transition-colors duration-300 cursor-default"
+                    className="bg-slate-800 text-cyan-300 px-3 py-1 rounded-full text-sm font-medium border border-cyan-900/50 hover:bg-cyan-900/30 hover:text-white transition-colors duration-300 cursor-default"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={
                       cardInView
@@ -263,7 +285,7 @@ function ProjectCard({ project, index }) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors duration-300 font-medium"
+              className="flex items-center px-6 py-3 bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition-colors duration-300 font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               title="View on GitHub"
@@ -277,7 +299,7 @@ function ProjectCard({ project, index }) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center px-6 py-3 border-2 border-blue-800 text-blue-800 rounded-lg hover:bg-blue-800 hover:text-white transition-colors duration-300 font-medium"
+                className="flex items-center px-6 py-3 border border-cyan-500 text-cyan-400 rounded-lg hover:bg-cyan-950/30 transition-colors duration-300 font-medium"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 title="View Live Demo"
@@ -297,8 +319,8 @@ function Projects() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="projects" className="py-20 bg-blue-50">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="projects" className="py-20 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
         {/* Section Header */}
         <motion.div
           ref={ref}
@@ -308,13 +330,13 @@ function Projects() {
           transition={{ duration: 0.8 }}
         >
           <div className="relative inline-block">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-800 mb-6">
-              My Projects
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              My <span className="gradient-text">Projects</span>
             </h2>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-800 to-blue-600 rounded"></div>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded"></div>
           </div>
 
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mt-8">
+          <p className="text-lg text-slate-300 max-w-4xl mx-auto leading-relaxed mt-8">
             Explore my portfolio of projects that showcase my ability to solve
             real-world challenges using creative and innovative technologies.
             Each project is a testament to my commitment to quality and
@@ -340,7 +362,7 @@ function Projects() {
             href="https://github.com/pubudu2003060"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-blue-800 text-white rounded-full font-semibold text-lg hover:bg-blue-900 transition-colors duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
