@@ -14,7 +14,7 @@ const skillsData = [
     icon: Layers,
     title: "Full Stack Development",
     description:
-      "Developing end-to-end applications using frontend technologies like React.js and backend frameworks like Node.js, Express.js, and Spring Boot, with databases such as MongoDB and MySQL.",
+      "Building end-to-end applications using Go, React.js, Node.js, Express.js, and Spring Boot with databases including PostgreSQL, MongoDB, MySQL, and ClickHouse.",
     gradient: "from-cyan-500 to-blue-500",
   },
   {
@@ -35,7 +35,7 @@ const skillsData = [
     icon: Wrench,
     title: "DevOps Engineering",
     description:
-      "Automating workflows and bridging dev and ops for smoother software delivery. I'm passionate about creating reliable pipelines that reduce manual overhead.",
+      "Building CI/CD pipelines with GitHub Actions, Docker, and Ansible for automated deployments. Experienced with AWS, Nginx, Grafana, and infrastructure as code with Terraform.",
     gradient: "from-purple-500 to-pink-500",
   },
 ];

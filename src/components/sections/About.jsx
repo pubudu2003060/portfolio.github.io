@@ -4,10 +4,13 @@ import { useInView } from "react-intersection-observer";
 import java from "../../assets/Java-Logo.png";
 import javaScript from "../../assets/JavaScript-logo.png";
 import typescript from "../../assets/typescript-logo.png";
+import goLogo from "../../assets/go-logo.svg";
 import php from "../../assets/php-logo.svg";
 import c from "../../assets/C_Logo.png";
 import mysql from "../../assets/mysql-logo.png";
 import mongodb from "../../assets/mongodb-logo.png";
+import postgresql from "../../assets/postgresql-logo.svg";
+import clickhouse from "../../assets/clickhouse-logo.svg";
 import html from "../../assets/HTML5_Badge.svg";
 import css from "../../assets/css-logo.png";
 import springBoot from "../../assets/Springboot.jpg";
@@ -21,6 +24,10 @@ import docker from "../../assets/Docker_(container_engine)_logo.svg";
 import terraform from "../../assets/terraform-logo.png";
 import githubActions from "../../assets/github-actions.png";
 import git from "../../assets/git-logo.png";
+import ansible from "../../assets/ansible-logo.svg";
+import nginx from "../../assets/nginx-logo.svg";
+import grafana from "../../assets/grafana-logo.svg";
+import googleCloud from "../../assets/google-cloud-logo.svg";
 
 const skillsData = {
   languages: {
@@ -34,6 +41,7 @@ const skillsData = {
           { name: "Java", icon: java },
           { name: "JavaScript", icon: javaScript },
           { name: "TypeScript", icon: typescript },
+          { name: "Go", icon: goLogo },
           { name: "PHP", icon: php },
           { name: "C", icon: c },
         ],
@@ -43,6 +51,8 @@ const skillsData = {
         skills: [
           { name: "MySQL", icon: mysql },
           { name: "MongoDB", icon: mongodb },
+          { name: "PostgreSQL", icon: postgresql },
+          { name: "ClickHouse", icon: clickhouse },
         ],
       },
     ],
@@ -65,6 +75,7 @@ const skillsData = {
       {
         title: "Backend",
         skills: [
+          { name: "Go (Chi, Gin)", icon: goLogo },
           { name: "Spring Boot", icon: springBoot },
           { name: "Node.js", icon: node },
           { name: "Express.js", icon: express },
@@ -80,8 +91,12 @@ const skillsData = {
       { name: "AWS", icon: aws },
       { name: "Docker", icon: docker },
       { name: "Terraform", icon: terraform },
+      { name: "Ansible", icon: ansible },
+      { name: "Nginx", icon: nginx },
+      { name: "Grafana", icon: grafana },
       { name: "Git & GitHub", icon: git },
       { name: "GitHub Actions", icon: githubActions },
+      { name: "Google Cloud", icon: googleCloud },
     ],
   },
   education: {
@@ -92,7 +107,7 @@ const skillsData = {
       {
         school: "University of Kelaniya",
         degree: "BSc(Hons) Software Engineering",
-        date: "July 2023 - Present • Current GPA: 3.56/4.0",
+        date: "July 2023 - Present • Current GPA: 3.67/4.0",
       },
       {
         school: "B/Orubandiwewa S.S",
@@ -140,6 +155,11 @@ const skillsData = {
         title: "Kubernetes from 10000 Feet",
         provider: "CoDeKu DevOps Academy",
         link: "https://www.linkedin.com/feed/update/urn:li:activity:7329578100730556416/",
+      },
+      {
+        title: "Top 10, Junior Hack 6.0 (2025)",
+        provider: "SESA, University of Kelaniya",
+        link: "#",
       },
     ],
   },
@@ -330,10 +350,11 @@ function About() {
           </div>
 
           <p className="text-lg text-slate-300 max-w-4xl mx-auto leading-relaxed mt-8">
-            I'm a dedicated software engineering undergraduate fueled by passion
-            for technology and innovation. Through hands-on projects, continued
-            learning, and real-world challenges, I strive to create practical
-            solutions that make a difference in the digital world.
+            Final-year Software Engineering undergraduate with hands-on
+            production experience in distributed systems, full-stack web and
+            mobile development, and cloud infrastructure. Passionate about
+            writing clean, scalable code and solving real-world engineering
+            problems.
           </p>
         </motion.div>
 

@@ -10,6 +10,7 @@ import Footer from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
 import Intro from "./components/sections/Intro";
 import About from "./components/sections/About";
+import Experience from "./components/sections/Experience";
 import Projects from "./components/sections/Projects";
 import Blog from "./components/sections/Blog";
 import Contact from "./components/sections/Contact";
@@ -59,6 +60,9 @@ function App() {
               <About />
 
               <WaveDivider fromColor="#020617" toColor="#0f172a" flip />
+              <Experience />
+
+              <WaveDivider fromColor="#0f172a" toColor="#0f172a" />
               <Projects />
 
               <WaveDivider fromColor="#0f172a" toColor="#020617" />

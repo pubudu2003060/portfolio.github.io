@@ -1,0 +1,72 @@
+/* Experience Section Styles */
+
+.experience-card {
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px -15px rgba(6, 182, 212, 0.15);
+}
+
+.experience-card-header {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+  padding: 2rem;
+}
+
+.experience-header-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.experience-icon-wrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+}
+
+.experience-header-text {
+  flex: 1;
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-left: 4.75rem;
+}
+
+.experience-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .experience-meta {
+    padding-left: 0;
+  }
+
+  .experience-header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .experience-meta {
+    justify-content: center;
+  }
+}

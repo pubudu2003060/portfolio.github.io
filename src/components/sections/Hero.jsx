@@ -55,12 +55,11 @@ function HeroContent() {
           className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed"
           variants={textVariants}
         >
-          I'm a Third-year Software Engineering undergraduate fascinated by
-          continuous learning and accepting challenges. Passionate about web
-          development and full-stack technologies, with hands-on experience in
-          React.js, Node.js, Express.js, MongoDB, Spring boot and MySQL. I love
-          crafting seamless user experiences and building robust backend
-          solutions.
+          Final-year Software Engineering undergraduate with hands-on production
+          experience in distributed systems, full-stack web and mobile
+          development, and cloud infrastructure. Proficient in Go, React.js,
+          Node.js, and Spring Boot, with practical DevOps expertise using Docker,
+          GitHub Actions, Ansible, and AWS.
         </motion.p>
 
         <motion.p

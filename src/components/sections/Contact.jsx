@@ -53,8 +53,8 @@ function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "madushanp835@gmail.com",
-      href: "mailto:madushanp835@gmail.com",
+      value: "madhushanpubudu2@gmail.com",
+      href: "mailto:madhushanpubudu2@gmail.com",
     },
     {
       icon: MapPin,

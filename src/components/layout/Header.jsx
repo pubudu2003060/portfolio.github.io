@@ -37,10 +37,9 @@ function Header() {
   const navLinks = [
     { href: "#hero", label: "Home" },
     { href: "#about", label: "About" },
-    { href: "#timeline", label: "Journey" },
+    { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
     { href: "#blog", label: "Blog" },
-    { href: "#github", label: "GitHub" },
   ];
 
   const scrollToSection = (href) => {

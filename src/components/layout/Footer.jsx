@@ -20,6 +20,7 @@ function Footer() {
     { href: "#hero", label: "Home" },
     { href: "#intro", label: "Intro" },
     { href: "#about", label: "About" },
+    { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
     { href: "#blog", label: "Blog" },
   ];
